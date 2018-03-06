@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+@import 'assets/icons/jbh-icons/jbh-icon';
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+html{
+  height:100%;
+}
+body{
+  height:100%;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}

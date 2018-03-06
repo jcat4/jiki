@@ -1,0 +1,146 @@
+{
+  "/admin/**": {
+    "target": "https://scm-tst.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/platform/**": {
+    "target": "https://scm-tst.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+   "/edisubscriptionindex-prof2/**": {
+		"target": "http://ormelastic-dev.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+	 "/edisubscriptionindex": {
+		"target": "http://ormelastic-dev.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	  },
+  "/ws_securityInternalAuthorization/**": {
+		"target": "https://ws-securityinternalauthorization-dev.jbhunt.com",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+  "/adminservices/**": {
+    "target": "http://jvtweb00302.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/ordermanagementorderservices": {
+    "target": "http://ordermanagementorderservices-dev.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/subscriptionindex": {
+    "target": "http://ormelastic-tst.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/edisubscriptionindex-prof2": {
+    "target": "http://ormelastic-tst.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/personeelemployeeprofileindex":{
+    "target": "http://ormelastic-dev.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/marketingarea":{
+    "target": "http://ormelastic-dev.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/masterdatalocationservices":{
+    "target": "http://jvtweb09701.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/location_details":{
+	"target": "http://ormelastic-tst.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/location-details":{
+	"target": "http://ormelastic-tst.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/account-details":{
+    "target": "http://ormelastic-tst.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+    "/taskmonitoringindex":{
+    "target": "http://elasticsearch-dev.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+    "/referencedataservices":{
+    "target": "http://jvtweb18101.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/ws_edi_findTradingPartners":{
+    "target": "http://jvtweb00101.jbhunt.com ",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/infrastructuretaskassignmentservices":{
+    "target": "http://infrastructuretaskassignmentservices-dev.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+    "/ws_masterdata_geography":{
+    "target": "http://jvtweb09701.jbhunt.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/contact_location,contact_account":{
+    "target": "http://ormelastic-dev.jbhunt.com:9200",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+	"/loc_details": {
+	  "target": "http://elasticsearch-dev.jbhunt.com:9200",
+	  "changeOrigin": true,
+	  "secure": false,
+	  "logLevel": "debug"
+  },
+  "/account_hierarchy": {
+	  "target": "http://ormelastic-tst.jbhunt.com:9200",
+	  "changeOrigin": true,
+	  "secure": false,
+	  "logLevel": "debug"
+  },
+  "/account-hierarchy": {
+	  "target": "http://ormelastic-tst.jbhunt.com:9200",
+	  "changeOrigin": true,
+	  "secure": false,
+	  "logLevel": "debug"
+  }
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <app-card class="col-12 col-md-4"></app-card>
+    <app-tabs class="col-12 col-md-8"></app-tabs>
+  </div>
+</div>
+<div *ngIf="eoiService.loadingCount < 2" class="overlay">
+  <div  class="browser-screen-loading-content">
+    <div class="loading-dots dark-gray">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+</div>

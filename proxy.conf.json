@@ -1,0 +1,45 @@
+{
+	"/admin/**": {
+		"target": "http://localhost:4200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/adminservices/**": {
+		"target": "http://jvdweb00301.jbhunt.com",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/subscriptionindex/**": {
+		"target": "http://jbhsearchengine-tst.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/edisubscriptionindex-prof2": {
+		"target": "http://ormelastic-dev.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	  },
+	  "/edisubscriptionindex": {
+		"target": "http://ormelastic-dev.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	  },
+	"/personeelemployeeprofileindex/**": {
+		"target": "http://jbhsearchengine-tst.jbhunt.com:9200",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	},
+	"/referencedataservices/**": {
+		"target": "https://referencedataservices-tst.jbhunt.com",
+		"changeOrigin": true,
+		"secure": false,
+		"logLevel": "debug"
+	}
+}
+
