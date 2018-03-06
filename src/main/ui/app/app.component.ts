@@ -1,6 +1,5 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {EoiService} from "./services/eoi.service";
 declare var JBH360Platform: any;
 
 @Component({
@@ -11,7 +10,7 @@ declare var JBH360Platform: any;
 export class AppComponent implements OnInit{
   title = 'app';
 
-  constructor(private ngZone: NgZone, private router: Router, public eoiService: EoiService) {
+  constructor(private ngZone: NgZone, private router: Router) {
   }
 
   ngOnInit() {

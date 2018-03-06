@@ -1,15 +1,10 @@
-
 .container{
-  max-width:100%;
-  height:100%;
-  border-left: 50px solid #2b313d;
-  overflow: auto;
-  & > .row {
-    padding-top: 50px;
-    overflow: auto;
+  max-width: inherit;
+  height: 100%;
+  & > .row{
+    height: 100%;
   }
 }
-
 .overlay {
     position: fixed; /* Sit on top of the page content */
     width: 100%; /* Full width (cover the whole page) */

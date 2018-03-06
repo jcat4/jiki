@@ -1,13 +1,13 @@
 {
-  "name": "app_infrastructure_preferences",
+  "name": "jiki",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.local.conf.json --env=local",
     "dev": "ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153 --proxy-config proxy.conf.json",
-    "build": "ng build --prod --aot --base-href=/preferences/",
-    "build-prod": "ng build --prod --aot --base-href=/preferences/",
+    "build": "ng build --prod --aot --base-href=/",
+    "build-prod": "ng build --prod --aot --base-href=/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

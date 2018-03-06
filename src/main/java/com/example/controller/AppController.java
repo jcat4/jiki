@@ -1,4 +1,4 @@
-package com.jbhunt.infrastructure.preferences.controller;
+package com.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class  AppController {
+public class AppController {
 
 	@RequestMapping({ "/",
     "/profile",
@@ -15,7 +15,4 @@ public class  AppController {
 	public String home(HttpSession httpSession) {
 		return "forward:/index.html";
 	}
-
-
-
 }

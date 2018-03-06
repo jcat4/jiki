@@ -1,0 +1,12 @@
+:host{
+  background: #2b313d;
+  color: white;
+}
+
+ul{
+  list-style-type:none;
+  padding-left: 10px;
+  & > li {
+    cursor: pointer;
+  }
+}
