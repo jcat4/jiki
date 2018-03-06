@@ -1,0 +1,1 @@
+JDBC_DATABASE_URL='jdbc:postgresql://ec2-50-17-206-214.compute-1.amazonaws.com:5432/d6th17cjg8lk9g?user=lklqkhhljhnidc&password=4d321a3dbf7a0f0328b43705f7bb0980db5ffd34f7ed5854de64c4b6c55dda63&sslmode=require'
