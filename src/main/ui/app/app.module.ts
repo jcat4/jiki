@@ -9,12 +9,16 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import { SideNavigationComponent } from './features/side-navigation/side-navigation.component';
+import { ReadViewComponent } from './features/read-view/read-view.component';
+import { EditViewComponent } from './features/edit-view/edit-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavigationComponent,
+    ReadViewComponent,
+    EditViewComponent,
   ],
   imports: [
       BrowserModule,

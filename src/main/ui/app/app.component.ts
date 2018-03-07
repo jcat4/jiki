@@ -21,8 +21,8 @@ export class AppComponent implements OnInit{
     }
     this.initHeader();
     this.menuItems = [
-        {label: 'Read', icon: 'fa-eye'},
-        {label: 'Edit', icon: 'fa-pencil'}
+        {label: 'Read', icon: 'fa-eye', routerLink: '/read'},
+        {label: 'Edit', icon: 'fa-pencil', routerLink: '/edit'}
     ]
   }
   private  initHeader() {
