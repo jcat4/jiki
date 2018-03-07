@@ -1,5 +1,6 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {MenuItem} from "primeng/api";
 declare var JBH360Platform: any;
 
 @Component({
@@ -9,6 +10,7 @@ declare var JBH360Platform: any;
 })
 export class AppComponent implements OnInit{
   title = 'app';
+  menuItems: MenuItem[];
 
   constructor(private ngZone: NgZone, private router: Router) {
   }
@@ -18,6 +20,10 @@ export class AppComponent implements OnInit{
       this.router.navigateByUrl(this.router.url);
     }
     this.initHeader();
+    this.menuItems = [
+        {label: 'Read', icon: 'fa-eye'},
+        {label: 'Edit', icon: 'fa-pencil'}
+    ]
   }
   private  initHeader() {
     try {

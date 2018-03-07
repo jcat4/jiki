@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap';
 @import 'assets/icons/jbh-icons/jbh-icon';
+@import "../../../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../../../node_modules/primeng/resources/themes/start/theme.css";
+@import "../../../node_modules/primeng/resources/primeng.min.css";
 
 .shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
