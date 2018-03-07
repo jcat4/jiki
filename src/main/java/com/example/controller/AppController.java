@@ -9,9 +9,7 @@ import javax.servlet.http.HttpSession;
 public class AppController {
 
 	@RequestMapping({ "/",
-    "/profile",
-    "/defaults",
-    "/notifications","/error/**","/error401", "/error404", "/error500" })
+    "/page/**","/error/**","/error401", "/error404", "/error500" })
 	public String home(HttpSession httpSession) {
 		return "forward:/index.html";
 	}

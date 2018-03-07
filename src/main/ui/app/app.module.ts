@@ -13,6 +13,7 @@ import { SideNavigationComponent } from './features/side-navigation/side-navigat
 import { ReadViewComponent } from './features/read-view/read-view.component';
 import { EditViewComponent } from './features/edit-view/edit-view.component';
 import { SectionComponent } from './features/section/section.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { SectionComponent } from './features/section/section.component';
       BrowserAnimationsModule,
       AppRoutingModule,
       HttpClientModule,
+      TabMenuModule,
+      RouterModule,
       TabMenuModule,
       CardModule
   ],
