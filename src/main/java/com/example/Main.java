@@ -44,11 +44,6 @@ public class Main {
     SpringApplication.run(Main.class, args);
   }
 
-  @RequestMapping("/")
-  String index() {
-    return "index";
-  }
-
   @Bean
   @Primary
   public DataSource dataSource() throws SQLException {
