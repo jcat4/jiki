@@ -6,11 +6,17 @@
 @import "../../../node_modules/primeng/resources/primeng.min.css";
 @import "variables";
 
+.360-bar {
+	position: fixed;
+	background-color: white;
+}
+
 .ui-tabmenu-nav {
 	background-color: $primary-blue;
 	position: fixed;
 	width: 100%;
 	padding-left: 0 !important;
+	margin-top: 50px !important;
 	top: 0;
 }
 
