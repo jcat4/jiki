@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { PageService } from './page.service';
+import {ISection} from "../../entity/section";
+
 
 @Component({
   selector: 'app-read-view',
@@ -6,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./read-view.component.scss']
 })
 export class ReadViewComponent implements OnInit {
+  errorMessage: String;
+  pageInfo: ISection[];
   summaryCard: String = 'Summary Info<br/>Info 1<br/>Info 2';
 
-  constructor() { }
+    constructor(private pageService: PageService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+      this.pageService.getPage().subscribe(
+          page => this.pageInfo = page,
+          error => this.errorMessage = error);
   }
 
 }

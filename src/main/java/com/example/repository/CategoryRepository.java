@@ -15,7 +15,11 @@ public interface CategoryRepository extends JpaRepository<CategoryEntity, Intege
 
     @Query(value = "SELECT distinct(wse) " +
             " FROM CategoryEntity AS wse " +
-            " WHERE wse.name = :name")
-    List<CategoryEntity> findCategoryByName(@Param("name")String name);
+            " WHERE wse.parentID IS NULL")
+    List<CategoryEntity> findAllTopLevelCategories();
 
+    @Query(value = "SELECT wse " +
+            " FROM CategoryEntity AS wse " +
+            " WHERE wse.parentID = :parentID")
+    List<CategoryEntity> findCategoriesByParentID(@Param("parentID")int parentID);
 }
