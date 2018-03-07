@@ -18,6 +18,8 @@ package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -38,11 +40,12 @@ import java.util.Map;
 @SpringBootApplication
 public class Main {
 
+  private Logger log =  LoggerFactory.getLogger(Main.class);
+
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
-  @Autowired
-  private DataSource dataSource;
+
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
@@ -56,7 +59,7 @@ public class Main {
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
     System.out.println("DB URL IS: " + dbUrl);
-    try (Connection connection = dataSource.getConnection()) {
+    try (Connection connection = dataSource().getConnection()) {
       Statement stmt = connection.createStatement();
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
       stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
@@ -77,11 +80,13 @@ public class Main {
 
   @Bean
   public DataSource dataSource() throws SQLException {
+    log.info("Database URL: " + dbUrl);
     if (dbUrl == null || dbUrl.isEmpty()) {
       return new HikariDataSource();
     } else {
       HikariConfig config = new HikariConfig();
       config.setJdbcUrl(dbUrl);
+
       return new HikariDataSource(config);
     }
   }
