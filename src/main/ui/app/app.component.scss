@@ -1,10 +1,29 @@
-.container{
+img{
+  height: 50px;
+}
+.header{
   max-width: inherit;
-  height: 100%;
+ & > .row{
+   & > div {
+     padding-left: 15px;
+     font-size: 1.5em;
+     font-weight: 300;
+     color: #939393;
+     padding-top: 7px;
+   }
+ }
+
+}
+.sidebar{
+  max-width: inherit;
+  height: calc(100% - 50px);
   & > .row{
-    height: 100%;
+    & > app-side-navigation{
+      width: 250px;
+    }
   }
 }
+
 .overlay {
     position: fixed; /* Sit on top of the page content */
     width: 100%; /* Full width (cover the whole page) */

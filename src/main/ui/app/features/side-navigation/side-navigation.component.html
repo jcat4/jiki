@@ -1,23 +1,10 @@
 <ul>
-    <li *ngFor="let item of items" (click)="item.open = !item.open">{{item.name}}
-        <span *ngIf="item.children">{{(item.open)? '▼':'▶'}}</span>
-        <ul *ngIf="item.open === true && item.children">
-            <li *ngFor="let item2 of item.children" (click)="item2.open = !item2.open">{{item2.name}}
-                <ul *ngIf="item2.open === true && item2.children">
-                    <li *ngFor="let item3 of item2.children" (click)="item3.open = !item3.open">{{item3.name}}
-                        <ul *ngIf="item3.open === true && item3.children">
-                            <li *ngFor="let item4 of item3.children" (click)="item4.open = !item4.open">{{item4.name}}
-                                <ul *ngIf="item4.open === true && item3.children">
-                                    <li *ngFor="let item5 of item4.children" (click)="item5.open = !item5.open">{{item5.name}}
-                                        <ul *ngIf="item5.open === true && item5.children">
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+    <li *ngFor="let item of items" (click)="item.open = !item.open; $event.stopPropagation()">
+        <a *ngIf="!item.children" routerLink='{{path}}{{item.name}}/read' routerLinkActive="active"> {{item.name}} </a>
+        <span *ngIf="item.children">{{item.name}}
+            <span *ngIf="item.children">{{(item.open)? '▼':'▶'}}</span>
+        </span>
+        <app-side-navigation *ngIf="item.children && item.open" [items]="item.children"
+                             [path]="path + item.name + '/'"></app-side-navigation>
     </li>
 </ul>

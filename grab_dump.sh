@@ -1,1 +1,1 @@
-git rm latest.*; heroku pg:backups:capture; heroku pg:backups:download; git add latest.dump; git commit -m "db dump update"; git push -u origin master
+rm latest.*; heroku pg:backups:capture; heroku pg:backups:download; git add latest.dump; git commit -m "db dump update"; git push -u origin master

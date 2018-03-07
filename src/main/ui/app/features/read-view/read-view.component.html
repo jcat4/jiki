@@ -1,3 +1,14 @@
-<p>
-  read-view works!
-</p>
+<table><tbody><tr>
+  <td style="padding-right:25px;">
+    <div *ngFor="let number of [0,1,2,3,4]">
+      <app-section></app-section><br/><br/>
+    </div>
+  </td>
+
+  <td style="vertical-align: top">
+    <br/>
+    <p-card *ngIf="summaryCard !== ''">
+      <div>{{summaryCard}}</div>
+    </p-card>
+  </td>
+</tr></tbody></table>

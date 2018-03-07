@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-side-navigation',
@@ -7,33 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavigationComponent implements OnInit {
 
-  public items = [
-      {
-        name: 'Getting Started'
-      },
-      {
-        name: 'Business Documentation',
-        open: true,
-        children: [
-            {
-                name: 'Scheduling'
-            },
-            {
-                name: 'CDRAP',
-            },
-            {
-                name: 'Some other app'
-            }
-        ]
-      },
-      {
-        name: 'Developer Documentation'
-      }
-  ];
+    @Input() public items;
+    @Input() public path;
+
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {console.log(this.path);
   }
 
 }
