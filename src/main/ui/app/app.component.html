@@ -1,5 +1,5 @@
 
-<div class="container header 360-bar">
+<div class="container header bar-360">
     <div class="row">
         <img src="assets\images\360left.png">
         <div class="col">
@@ -11,9 +11,11 @@
 <div class="container sidebar">
     <div class="row">
         <app-side-navigation [items]="items" [path]="path"></app-side-navigation>
-        <div class="col">
+        <div class="col not-side">
             <p-tabMenu [model]="menuItems"></p-tabMenu>
-            <router-outlet id='content'></router-outlet>
+            <div id='content'>
+            	<router-outlet></router-outlet>
+            </div>
         </div>
 
   </div>

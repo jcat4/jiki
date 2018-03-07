@@ -7,8 +7,13 @@
 @import '~prismjs/themes/prism.css';
 @import "variables";
 
-.360-bar {
+.bar-360 {
 	position: fixed;
+	background-color: white;
+	z-index: 999;
+}
+
+.bar-360 row {
 	background-color: white;
 }
 
@@ -16,13 +21,15 @@
 	background-color: $primary-blue;
 	position: fixed;
 	width: 100%;
-	padding-left: 0 !important;
 	margin-top: 50px !important;
 	top: 0;
+	height: $top-bar-height;
+	border-radius: 0 !important;
+	border: none;
 }
 
 #content {
-	padding-top: 57px;
+	padding-top: 97px;
 	padding-left: 15px;
 }
 
