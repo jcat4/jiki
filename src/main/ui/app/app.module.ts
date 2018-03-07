@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {MenuItem} from 'primeng/api';
 
 
 import { AppComponent } from './app.component';
@@ -14,9 +17,11 @@ import { SideNavigationComponent } from './features/side-navigation/side-navigat
     SideNavigationComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+      BrowserModule,
+      BrowserAnimationsModule,
+      AppRoutingModule,
+      HttpClientModule,
+      TabMenuModule
   ],
   bootstrap: [AppComponent]
 })
