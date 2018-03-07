@@ -45,7 +45,8 @@ public class Main {
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
-
+  @Autowired
+  private DataSource dataSource;
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
@@ -59,7 +60,7 @@ public class Main {
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
     System.out.println("DB URL IS: " + dbUrl);
-    try (Connection connection = dataSource().getConnection()) {
+    try (Connection connection = dataSource.getConnection()) {
       Statement stmt = connection.createStatement();
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
       stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
