@@ -37,6 +37,7 @@ public class PageServiceImpl implements PageService {
 
             //log.info(sectionEntities.size() + " sections  found for " + pageEntity.getTitle());
 
+            page.setId(pageEntity.getId());
             page.setTitle(pageEntity.getTitle());
 
             if(sectionEntities.size() > 0) {
