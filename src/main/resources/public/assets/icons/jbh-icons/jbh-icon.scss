@@ -1,0 +1,974 @@
+@font-face {
+	font-family: "jbh-icon";
+	src: url('assets/icons/jbh-icons/jbh-icon.eot');
+	src: url('assets/icons/jbh-icons/jbh-icon.eot?#iefix') format('eot'),
+		url('assets/icons/jbh-icons/jbh-icon.woff2') format('woff2'),
+		url('assets/icons/jbh-icons/jbh-icon.woff') format('woff'),
+		url('assets/icons/jbh-icons/jbh-icon.ttf') format('truetype'),
+		url('assets/icons/jbh-icons/jbh-icon.svg#jbh-icon') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "jbh-icon";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == Accounts {
+		$char: "\E001";
+	}
+	@if $filename == Administration {
+		$char: "\E002";
+	}
+	@if $filename == Advisor {
+		$char: "\E003";
+	}
+	@if $filename == Locations {
+		$char: "\E004";
+	}
+	@if $filename == Orders {
+		$char: "\E005";
+	}
+	@if $filename == Payments {
+		$char: "\E006";
+	}
+	@if $filename == Preferences {
+		$char: "\E007";
+	}
+	@if $filename == Reports {
+		$char: "\E008";
+	}
+	@if $filename == Routes {
+		$char: "\E009";
+	}
+	@if $filename == Users {
+		$char: "\E00A";
+	}
+	@if $filename == Icon_Archive {
+		$char: "\E00B";
+	}
+	@if $filename == Icon_Arrow_Down {
+		$char: "\E00C";
+	}
+	@if $filename == Icon_Arrow_Up {
+		$char: "\E00D";
+	}
+	@if $filename == Icon_Bars_One {
+		$char: "\E00E";
+	}
+	@if $filename == Icon_Bars_Three {
+		$char: "\E00F";
+	}
+	@if $filename == Icon_Bars_Two {
+		$char: "\E010";
+	}
+	@if $filename == Icon_Bed {
+		$char: "\E011";
+	}
+	@if $filename == Icon_Briefcase {
+		$char: "\E012";
+	}
+	@if $filename == Icon_Calendar {
+		$char: "\E013";
+	}
+	@if $filename == Icon_Chat {
+		$char: "\E014";
+	}
+	@if $filename == Icon_Check {
+		$char: "\E015";
+	}
+	@if $filename == Icon_Chevron_Back {
+		$char: "\E016";
+	}
+	@if $filename == Icon_Chevron_Next {
+		$char: "\E017";
+	}
+	@if $filename == Icon_Chevron_Unexpanded {
+		$char: "\E018";
+	}
+	@if $filename == Icon_Circle_Add_Solid {
+		$char: "\E019";
+	}
+	@if $filename == Icon_Circle_Check {
+		$char: "\E01A";
+	}
+	@if $filename == Icon_Circle_Check_Solid {
+		$char: "\E01B";
+	}
+	@if $filename == Icon_Circle_Clickable {
+		$char: "\E01C";
+	}
+	@if $filename == Icon_Circle_Clock {
+		$char: "\E01D";
+	}
+	@if $filename == Icon_Circle_Clock_Snooze {
+		$char: "\E01E";
+	}
+	@if $filename == Icon_Circle_Clock_Solid {
+		$char: "\E01F";
+	}
+	@if $filename == Icon_Circle_Empty {
+		$char: "\E020";
+	}
+	@if $filename == Icon_Circle_Info {
+		$char: "\E021";
+	}
+	@if $filename == Icon_Circle_Info_Solid {
+		$char: "\E022";
+	}
+	@if $filename == Icon_Circle_NotAvailable {
+		$char: "\E023";
+	}
+	@if $filename == Icon_Circle_Question {
+		$char: "\E024";
+	}
+	@if $filename == Icon_Circle_Question_Solid {
+		$char: "\E025";
+	}
+	@if $filename == Icon_Circle_Rating_Happy {
+		$char: "\E026";
+	}
+	@if $filename == Icon_Circle_Rating_Neutral {
+		$char: "\E027";
+	}
+	@if $filename == Icon_Circle_Rating_Sad {
+		$char: "\E028";
+	}
+	@if $filename == Icon_Circle_Remove_Solid {
+		$char: "\E029";
+	}
+	@if $filename == Icon_Circle_Scroll {
+		$char: "\E02A";
+	}
+	@if $filename == Icon_Circle_Trophy {
+		$char: "\E02B";
+	}
+	@if $filename == Icon_Circle_Username {
+		$char: "\E02C";
+	}
+	@if $filename == Icon_Circle_Warning {
+		$char: "\E02D";
+	}
+	@if $filename == Icon_Circle_Warning_Solid {
+		$char: "\E02E";
+	}
+	@if $filename == Icon_Circle_Wheel {
+		$char: "\E02F";
+	}
+	@if $filename == Icon_Contacts {
+		$char: "\E030";
+	}
+	@if $filename == Icon_Contact_Mail {
+		$char: "\E031";
+	}
+	@if $filename == Icon_Contact_Phone {
+		$char: "\E032";
+	}
+	@if $filename == Icon_Couch {
+		$char: "\E033";
+	}
+	@if $filename == Icon_Couch_Material {
+		$char: "\E034";
+	}
+	@if $filename == Icon_Crate {
+		$char: "\E035";
+	}
+	@if $filename == Icon_Crate_Search {
+		$char: "\E036";
+	}
+	@if $filename == Icon_CreditCard {
+		$char: "\E037";
+	}
+	@if $filename == Icon_Device_Camera {
+		$char: "\E038";
+	}
+	@if $filename == Icon_Device_Laptop {
+		$char: "\E039";
+	}
+	@if $filename == Icon_Device_Monitor {
+		$char: "\E03A";
+	}
+	@if $filename == Icon_Device_Smartphone {
+		$char: "\E03B";
+	}
+	@if $filename == Icon_Device_TV {
+		$char: "\E03C";
+	}
+	@if $filename == Icon_Document {
+		$char: "\E03D";
+	}
+	@if $filename == Icon_Documents_ApprovedSurveys {
+		$char: "\E03E";
+	}
+	@if $filename == Icon_Documents_Items {
+		$char: "\E03F";
+	}
+	@if $filename == Icon_Document_CopyScan {
+		$char: "\E040";
+	}
+	@if $filename == Icon_Document_Items {
+		$char: "\E041";
+	}
+	@if $filename == Icon_Document_OrderDetails {
+		$char: "\E042";
+	}
+	@if $filename == Icon_Download {
+		$char: "\E043";
+	}
+	@if $filename == Icon_Exercise {
+		$char: "\E044";
+	}
+	@if $filename == Icon_Eye {
+		$char: "\E045";
+	}
+	@if $filename == Icon_Filter {
+		$char: "\E046";
+	}
+	@if $filename == Icon_Gear {
+		$char: "\E047";
+	}
+	@if $filename == Icon_Hazmat {
+		$char: "\E048";
+	}
+	@if $filename == Icon_Heart {
+		$char: "\E049";
+	}
+	@if $filename == Icon_Heart_Solid {
+		$char: "\E04A";
+	}
+	@if $filename == Icon_Hierarchy {
+		$char: "\E04B";
+	}
+	@if $filename == Icon_Home {
+		$char: "\E04C";
+	}
+	@if $filename == Icon_Info {
+		$char: "\E04D";
+	}
+	@if $filename == Icon_List {
+		$char: "\E04E";
+	}
+	@if $filename == Icon_Loading {
+		$char: "\E04F";
+	}
+	@if $filename == Icon_Location {
+		$char: "\E050";
+	}
+	@if $filename == Icon_Machine {
+		$char: "\E051";
+	}
+	@if $filename == Icon_Machine_Service {
+		$char: "\E052";
+	}
+	@if $filename == Icon_Map {
+		$char: "\E053";
+	}
+	@if $filename == Icon_Math_Add {
+		$char: "\E054";
+	}
+	@if $filename == Icon_Math_Subtract {
+		$char: "\E055";
+	}
+	@if $filename == Icon_Menu_AddListItem {
+		$char: "\E056";
+	}
+	@if $filename == Icon_Menu_Card {
+		$char: "\E057";
+	}
+	@if $filename == Icon_Menu_Close {
+		$char: "\E058";
+	}
+	@if $filename == Icon_Menu_Edit {
+		$char: "\E059";
+	}
+	@if $filename == Icon_Menu_Expand {
+		$char: "\E05A";
+	}
+	@if $filename == Icon_Menu_Hamburger {
+		$char: "\E05B";
+	}
+	@if $filename == Icon_Menu_Logout {
+		$char: "\E05C";
+	}
+	@if $filename == Icon_Menu_Overflow {
+		$char: "\E05D";
+	}
+	@if $filename == Icon_Menu_Reorder {
+		$char: "\E05E";
+	}
+	@if $filename == Icon_Menu_Reply {
+		$char: "\E05F";
+	}
+	@if $filename == Icon_Menu_Undo {
+		$char: "\E060";
+	}
+	@if $filename == Icon_Menu_Undock {
+		$char: "\E061";
+	}
+	@if $filename == Icon_Menu_Waffle {
+		$char: "\E062";
+	}
+	@if $filename == Icon_Message {
+		$char: "\E063";
+	}
+	@if $filename == Icon_Money {
+		$char: "\E064";
+	}
+	@if $filename == Icon_Navigation {
+		$char: "\E065";
+	}
+	@if $filename == Icon_Note {
+		$char: "\E066";
+	}
+	@if $filename == Icon_Notification {
+		$char: "\E067";
+	}
+	@if $filename == Icon_Paperclip {
+		$char: "\E068";
+	}
+	@if $filename == Icon_Parking {
+		$char: "\E069";
+	}
+	@if $filename == Icon_Parking_Overnight {
+		$char: "\E06A";
+	}
+	@if $filename == Icon_Password {
+		$char: "\E06B";
+	}
+	@if $filename == Icon_Perks {
+		$char: "\E06C";
+	}
+	@if $filename == Icon_Picture {
+		$char: "\E06D";
+	}
+	@if $filename == Icon_Pin {
+		$char: "\E06E";
+	}
+	@if $filename == Icon_Placeholder {
+		$char: "\E06F";
+	}
+	@if $filename == Icon_Question {
+		$char: "\E070";
+	}
+	@if $filename == Icon_Restroom {
+		$char: "\E071";
+	}
+	@if $filename == Icon_Road {
+		$char: "\E072";
+	}
+	@if $filename == Icon_Scan {
+		$char: "\E073";
+	}
+	@if $filename == Icon_Search {
+		$char: "\E074";
+	}
+	@if $filename == Icon_Social_Facebook {
+		$char: "\E075";
+	}
+	@if $filename == Icon_Social_Instagram {
+		$char: "\E076";
+	}
+	@if $filename == Icon_Social_LinkedIn {
+		$char: "\E077";
+	}
+	@if $filename == Icon_Social_Skype {
+		$char: "\E078";
+	}
+	@if $filename == Icon_Social_Twitter {
+		$char: "\E079";
+	}
+	@if $filename == Icon_Social_Youtube {
+		$char: "\E07A";
+	}
+	@if $filename == Icon_Star {
+		$char: "\E07B";
+	}
+	@if $filename == Icon_Star_Full {
+		$char: "\E07C";
+	}
+	@if $filename == Icon_Star_Half {
+		$char: "\E07D";
+	}
+	@if $filename == Icon_Tag {
+		$char: "\E07E";
+	}
+	@if $filename == Icon_Tag_Alert {
+		$char: "\E07F";
+	}
+	@if $filename == Icon_Tag_Half {
+		$char: "\E080";
+	}
+	@if $filename == Icon_Tag_Solid {
+		$char: "\E081";
+	}
+	@if $filename == Icon_Thermometer {
+		$char: "\E082";
+	}
+	@if $filename == Icon_Thumb_Up {
+		$char: "\E083";
+	}
+	@if $filename == Icon_Tool {
+		$char: "\E084";
+	}
+	@if $filename == Icon_Trailers {
+		$char: "\E085";
+	}
+	@if $filename == Icon_Trash {
+		$char: "\E086";
+	}
+	@if $filename == Icon_Truck {
+		$char: "\E087";
+	}
+	@if $filename == Icon_Upload {
+		$char: "\E088";
+	}
+	@if $filename == Icon_User_Group {
+		$char: "\E089";
+	}
+	@if $filename == Icon_User_Profile {
+		$char: "\E08A";
+	}
+	@if $filename == Icon_User_Profile_Solid {
+		$char: "\E08B";
+	}
+	@if $filename == Icon_Warning {
+		$char: "\E08C";
+	}
+	@if $filename == Icon_Warning_Triangle {
+		$char: "\E08D";
+	}
+	@if $filename == Icon_Warning_Triangle_Solid {
+		$char: "\E08E";
+	}
+	@if $filename == Icon_Weather_Cloudy {
+		$char: "\E08F";
+	}
+	@if $filename == Icon_Weather_PartlyCloudy {
+		$char: "\E090";
+	}
+	@if $filename == Icon_Weather_Rain {
+		$char: "\E091";
+	}
+	@if $filename == Icon_Weather_Snow {
+		$char: "\E092";
+	}
+	@if $filename == Icon_Weather_Sunny {
+		$char: "\E093";
+	}
+	@if $filename == Icon_Weather_Thunderstorms {
+		$char: "\E094";
+	}
+	@if $filename == Icon_Wide_Container {
+		$char: "\E095";
+	}
+	@if $filename == Icon_Wide_DryVan {
+		$char: "\E096";
+	}
+	@if $filename == Icon_Wide_Flatbed {
+		$char: "\E097";
+	}
+	@if $filename == Icon_Wide_LTL {
+		$char: "\E098";
+	}
+	@if $filename == Icon_Wide_Refrigerated {
+		$char: "\E099";
+	}
+	@if $filename == Icon_Wide_Trailer {
+		$char: "\E09A";
+	}
+	@if $filename == Icon_Wide_Trailers {
+		$char: "\E09B";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-Accounts {
+	@include icon(Accounts);
+}
+.icon-Administration {
+	@include icon(Administration);
+}
+.icon-Advisor {
+	@include icon(Advisor);
+}
+.icon-Locations {
+	@include icon(Locations);
+}
+.icon-Orders {
+	@include icon(Orders);
+}
+.icon-Payments {
+	@include icon(Payments);
+}
+.icon-Preferences {
+	@include icon(Preferences);
+}
+.icon-Reports {
+	@include icon(Reports);
+}
+.icon-Routes {
+	@include icon(Routes);
+}
+.icon-Users {
+	@include icon(Users);
+}
+.icon-Icon_Archive {
+	@include icon(Icon_Archive);
+}
+.icon-Icon_Arrow_Down {
+	@include icon(Icon_Arrow_Down);
+}
+.icon-Icon_Arrow_Up {
+	@include icon(Icon_Arrow_Up);
+}
+.icon-Icon_Bars_One {
+	@include icon(Icon_Bars_One);
+}
+.icon-Icon_Bars_Three {
+	@include icon(Icon_Bars_Three);
+}
+.icon-Icon_Bars_Two {
+	@include icon(Icon_Bars_Two);
+}
+.icon-Icon_Bed {
+	@include icon(Icon_Bed);
+}
+.icon-Icon_Briefcase {
+	@include icon(Icon_Briefcase);
+}
+.icon-Icon_Calendar {
+	@include icon(Icon_Calendar);
+}
+.icon-Icon_Chat {
+	@include icon(Icon_Chat);
+}
+.icon-Icon_Check {
+	@include icon(Icon_Check);
+}
+.icon-Icon_Chevron_Back {
+	@include icon(Icon_Chevron_Back);
+}
+.icon-Icon_Chevron_Next {
+	@include icon(Icon_Chevron_Next);
+}
+.icon-Icon_Chevron_Unexpanded {
+	@include icon(Icon_Chevron_Unexpanded);
+}
+.icon-Icon_Circle_Add_Solid {
+	@include icon(Icon_Circle_Add_Solid);
+}
+.icon-Icon_Circle_Check {
+	@include icon(Icon_Circle_Check);
+}
+.icon-Icon_Circle_Check_Solid {
+	@include icon(Icon_Circle_Check_Solid);
+}
+.icon-Icon_Circle_Clickable {
+	@include icon(Icon_Circle_Clickable);
+}
+.icon-Icon_Circle_Clock {
+	@include icon(Icon_Circle_Clock);
+}
+.icon-Icon_Circle_Clock_Snooze {
+	@include icon(Icon_Circle_Clock_Snooze);
+}
+.icon-Icon_Circle_Clock_Solid {
+	@include icon(Icon_Circle_Clock_Solid);
+}
+.icon-Icon_Circle_Empty {
+	@include icon(Icon_Circle_Empty);
+}
+.icon-Icon_Circle_Info {
+	@include icon(Icon_Circle_Info);
+}
+.icon-Icon_Circle_Info_Solid {
+	@include icon(Icon_Circle_Info_Solid);
+}
+.icon-Icon_Circle_NotAvailable {
+	@include icon(Icon_Circle_NotAvailable);
+}
+.icon-Icon_Circle_Question {
+	@include icon(Icon_Circle_Question);
+}
+.icon-Icon_Circle_Question_Solid {
+	@include icon(Icon_Circle_Question_Solid);
+}
+.icon-Icon_Circle_Rating_Happy {
+	@include icon(Icon_Circle_Rating_Happy);
+}
+.icon-Icon_Circle_Rating_Neutral {
+	@include icon(Icon_Circle_Rating_Neutral);
+}
+.icon-Icon_Circle_Rating_Sad {
+	@include icon(Icon_Circle_Rating_Sad);
+}
+.icon-Icon_Circle_Remove_Solid {
+	@include icon(Icon_Circle_Remove_Solid);
+}
+.icon-Icon_Circle_Scroll {
+	@include icon(Icon_Circle_Scroll);
+}
+.icon-Icon_Circle_Trophy {
+	@include icon(Icon_Circle_Trophy);
+}
+.icon-Icon_Circle_Username {
+	@include icon(Icon_Circle_Username);
+}
+.icon-Icon_Circle_Warning {
+	@include icon(Icon_Circle_Warning);
+}
+.icon-Icon_Circle_Warning_Solid {
+	@include icon(Icon_Circle_Warning_Solid);
+}
+.icon-Icon_Circle_Wheel {
+	@include icon(Icon_Circle_Wheel);
+}
+.icon-Icon_Contacts {
+	@include icon(Icon_Contacts);
+}
+.icon-Icon_Contact_Mail {
+	@include icon(Icon_Contact_Mail);
+}
+.icon-Icon_Contact_Phone {
+	@include icon(Icon_Contact_Phone);
+}
+.icon-Icon_Couch {
+	@include icon(Icon_Couch);
+}
+.icon-Icon_Couch_Material {
+	@include icon(Icon_Couch_Material);
+}
+.icon-Icon_Crate {
+	@include icon(Icon_Crate);
+}
+.icon-Icon_Crate_Search {
+	@include icon(Icon_Crate_Search);
+}
+.icon-Icon_CreditCard {
+	@include icon(Icon_CreditCard);
+}
+.icon-Icon_Device_Camera {
+	@include icon(Icon_Device_Camera);
+}
+.icon-Icon_Device_Laptop {
+	@include icon(Icon_Device_Laptop);
+}
+.icon-Icon_Device_Monitor {
+	@include icon(Icon_Device_Monitor);
+}
+.icon-Icon_Device_Smartphone {
+	@include icon(Icon_Device_Smartphone);
+}
+.icon-Icon_Device_TV {
+	@include icon(Icon_Device_TV);
+}
+.icon-Icon_Document {
+	@include icon(Icon_Document);
+}
+.icon-Icon_Documents_ApprovedSurveys {
+	@include icon(Icon_Documents_ApprovedSurveys);
+}
+.icon-Icon_Documents_Items {
+	@include icon(Icon_Documents_Items);
+}
+.icon-Icon_Document_CopyScan {
+	@include icon(Icon_Document_CopyScan);
+}
+.icon-Icon_Document_Items {
+	@include icon(Icon_Document_Items);
+}
+.icon-Icon_Document_OrderDetails {
+	@include icon(Icon_Document_OrderDetails);
+}
+.icon-Icon_Download {
+	@include icon(Icon_Download);
+}
+.icon-Icon_Exercise {
+	@include icon(Icon_Exercise);
+}
+.icon-Icon_Eye {
+	@include icon(Icon_Eye);
+}
+.icon-Icon_Filter {
+	@include icon(Icon_Filter);
+}
+.icon-Icon_Gear {
+	@include icon(Icon_Gear);
+}
+.icon-Icon_Hazmat {
+	@include icon(Icon_Hazmat);
+}
+.icon-Icon_Heart {
+	@include icon(Icon_Heart);
+}
+.icon-Icon_Heart_Solid {
+	@include icon(Icon_Heart_Solid);
+}
+.icon-Icon_Hierarchy {
+	@include icon(Icon_Hierarchy);
+}
+.icon-Icon_Home {
+	@include icon(Icon_Home);
+}
+.icon-Icon_Info {
+	@include icon(Icon_Info);
+}
+.icon-Icon_List {
+	@include icon(Icon_List);
+}
+.icon-Icon_Loading {
+	@include icon(Icon_Loading);
+}
+.icon-Icon_Location {
+	@include icon(Icon_Location);
+}
+.icon-Icon_Machine {
+	@include icon(Icon_Machine);
+}
+.icon-Icon_Machine_Service {
+	@include icon(Icon_Machine_Service);
+}
+.icon-Icon_Map {
+	@include icon(Icon_Map);
+}
+.icon-Icon_Math_Add {
+	@include icon(Icon_Math_Add);
+}
+.icon-Icon_Math_Subtract {
+	@include icon(Icon_Math_Subtract);
+}
+.icon-Icon_Menu_AddListItem {
+	@include icon(Icon_Menu_AddListItem);
+}
+.icon-Icon_Menu_Card {
+	@include icon(Icon_Menu_Card);
+}
+.icon-Icon_Menu_Close {
+	@include icon(Icon_Menu_Close);
+}
+.icon-Icon_Menu_Edit {
+	@include icon(Icon_Menu_Edit);
+}
+.icon-Icon_Menu_Expand {
+	@include icon(Icon_Menu_Expand);
+}
+.icon-Icon_Menu_Hamburger {
+	@include icon(Icon_Menu_Hamburger);
+}
+.icon-Icon_Menu_Logout {
+	@include icon(Icon_Menu_Logout);
+}
+.icon-Icon_Menu_Overflow {
+	@include icon(Icon_Menu_Overflow);
+}
+.icon-Icon_Menu_Reorder {
+	@include icon(Icon_Menu_Reorder);
+}
+.icon-Icon_Menu_Reply {
+	@include icon(Icon_Menu_Reply);
+}
+.icon-Icon_Menu_Undo {
+	@include icon(Icon_Menu_Undo);
+}
+.icon-Icon_Menu_Undock {
+	@include icon(Icon_Menu_Undock);
+}
+.icon-Icon_Menu_Waffle {
+	@include icon(Icon_Menu_Waffle);
+}
+.icon-Icon_Message {
+	@include icon(Icon_Message);
+}
+.icon-Icon_Money {
+	@include icon(Icon_Money);
+}
+.icon-Icon_Navigation {
+	@include icon(Icon_Navigation);
+}
+.icon-Icon_Note {
+	@include icon(Icon_Note);
+}
+.icon-Icon_Notification {
+	@include icon(Icon_Notification);
+}
+.icon-Icon_Paperclip {
+	@include icon(Icon_Paperclip);
+}
+.icon-Icon_Parking {
+	@include icon(Icon_Parking);
+}
+.icon-Icon_Parking_Overnight {
+	@include icon(Icon_Parking_Overnight);
+}
+.icon-Icon_Password {
+	@include icon(Icon_Password);
+}
+.icon-Icon_Perks {
+	@include icon(Icon_Perks);
+}
+.icon-Icon_Picture {
+	@include icon(Icon_Picture);
+}
+.icon-Icon_Pin {
+	@include icon(Icon_Pin);
+}
+.icon-Icon_Placeholder {
+	@include icon(Icon_Placeholder);
+}
+.icon-Icon_Question {
+	@include icon(Icon_Question);
+}
+.icon-Icon_Restroom {
+	@include icon(Icon_Restroom);
+}
+.icon-Icon_Road {
+	@include icon(Icon_Road);
+}
+.icon-Icon_Scan {
+	@include icon(Icon_Scan);
+}
+.icon-Icon_Search {
+	@include icon(Icon_Search);
+}
+.icon-Icon_Social_Facebook {
+	@include icon(Icon_Social_Facebook);
+}
+.icon-Icon_Social_Instagram {
+	@include icon(Icon_Social_Instagram);
+}
+.icon-Icon_Social_LinkedIn {
+	@include icon(Icon_Social_LinkedIn);
+}
+.icon-Icon_Social_Skype {
+	@include icon(Icon_Social_Skype);
+}
+.icon-Icon_Social_Twitter {
+	@include icon(Icon_Social_Twitter);
+}
+.icon-Icon_Social_Youtube {
+	@include icon(Icon_Social_Youtube);
+}
+.icon-Icon_Star {
+	@include icon(Icon_Star);
+}
+.icon-Icon_Star_Full {
+	@include icon(Icon_Star_Full);
+}
+.icon-Icon_Star_Half {
+	@include icon(Icon_Star_Half);
+}
+.icon-Icon_Tag {
+	@include icon(Icon_Tag);
+}
+.icon-Icon_Tag_Alert {
+	@include icon(Icon_Tag_Alert);
+}
+.icon-Icon_Tag_Half {
+	@include icon(Icon_Tag_Half);
+}
+.icon-Icon_Tag_Solid {
+	@include icon(Icon_Tag_Solid);
+}
+.icon-Icon_Thermometer {
+	@include icon(Icon_Thermometer);
+}
+.icon-Icon_Thumb_Up {
+	@include icon(Icon_Thumb_Up);
+}
+.icon-Icon_Tool {
+	@include icon(Icon_Tool);
+}
+.icon-Icon_Trailers {
+	@include icon(Icon_Trailers);
+}
+.icon-Icon_Trash {
+	@include icon(Icon_Trash);
+}
+.icon-Icon_Truck {
+	@include icon(Icon_Truck);
+}
+.icon-Icon_Upload {
+	@include icon(Icon_Upload);
+}
+.icon-Icon_User_Group {
+	@include icon(Icon_User_Group);
+}
+.icon-Icon_User_Profile {
+	@include icon(Icon_User_Profile);
+}
+.icon-Icon_User_Profile_Solid {
+	@include icon(Icon_User_Profile_Solid);
+}
+.icon-Icon_Warning {
+	@include icon(Icon_Warning);
+}
+.icon-Icon_Warning_Triangle {
+	@include icon(Icon_Warning_Triangle);
+}
+.icon-Icon_Warning_Triangle_Solid {
+	@include icon(Icon_Warning_Triangle_Solid);
+}
+.icon-Icon_Weather_Cloudy {
+	@include icon(Icon_Weather_Cloudy);
+}
+.icon-Icon_Weather_PartlyCloudy {
+	@include icon(Icon_Weather_PartlyCloudy);
+}
+.icon-Icon_Weather_Rain {
+	@include icon(Icon_Weather_Rain);
+}
+.icon-Icon_Weather_Snow {
+	@include icon(Icon_Weather_Snow);
+}
+.icon-Icon_Weather_Sunny {
+	@include icon(Icon_Weather_Sunny);
+}
+.icon-Icon_Weather_Thunderstorms {
+	@include icon(Icon_Weather_Thunderstorms);
+}
+.icon-Icon_Wide_Container {
+	@include icon(Icon_Wide_Container);
+}
+.icon-Icon_Wide_DryVan {
+	@include icon(Icon_Wide_DryVan);
+}
+.icon-Icon_Wide_Flatbed {
+	@include icon(Icon_Wide_Flatbed);
+}
+.icon-Icon_Wide_LTL {
+	@include icon(Icon_Wide_LTL);
+}
+.icon-Icon_Wide_Refrigerated {
+	@include icon(Icon_Wide_Refrigerated);
+}
+.icon-Icon_Wide_Trailer {
+	@include icon(Icon_Wide_Trailer);
+}
+.icon-Icon_Wide_Trailers {
+	@include icon(Icon_Wide_Trailers);
+}
