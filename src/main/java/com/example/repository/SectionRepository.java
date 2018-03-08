@@ -13,7 +13,7 @@ import java.util.List;
 public interface SectionRepository extends JpaRepository<SectionEntity, Integer> {
 
     @Query(value = "SELECT wse " +
-            " FROM PageEntity AS wse " +
-            " WHERE wse.categoryId = :categoryId")
-    List<PageEntity> findAllPagesForCategory(@Param("categoryId")int categoryId);
+            " FROM SectionEntity AS wse " +
+            " WHERE wse.pageID = :pageID")
+    List<SectionEntity> findAllSectionsForPage(@Param("pageID")int pageID);
 }
