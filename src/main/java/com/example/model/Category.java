@@ -3,6 +3,8 @@ package com.example.model;
 import java.util.List;
 
 public class Category {
+
+    private int categoryID;
     private String name;
     private List<Category> children;
 
@@ -24,5 +26,13 @@ public class Category {
 
     public void setChildren(List<Category> children) {
         this.children = children;
+    }
+
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
     }
 }
