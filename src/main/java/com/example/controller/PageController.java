@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.entity.CategoryEntity;
 import com.example.entity.PageEntity;
 import com.example.model.Category;
+import com.example.model.Page;
 import com.example.repository.CategoryRepository;
 import com.example.repository.PageRepository;
 import org.slf4j.Logger;
@@ -32,4 +33,13 @@ public class PageController {
         return pageRepository.findAllPagesForCategory(categoryID);
     }
 
+    @GetMapping(path = {"/page/{pageID}"})
+    public Page findByPageID(@PathVariable("pageID") int pageID) {
+        Page page = new Page();
+        PageEntity pageEntity = pageRepository.findPageByID(pageID);
+
+
+
+        return page;
+    }
 }
