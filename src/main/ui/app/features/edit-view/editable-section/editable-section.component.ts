@@ -1,5 +1,7 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {ISection} from "../../../entity/section";
+import {AddSectionService} from "../add-section.service";
+
 
 @Component({
   selector: 'app-editable-section',
@@ -7,11 +9,26 @@ import {ISection} from "../../../entity/section";
   styleUrls: ['./editable-section.component.scss']
 })
 export class EditableSectionComponent implements OnInit {
-  @Input() section: ISection;
+  @Input() section: ISection = <ISection>{"title": "", "body":"", "card":"", "sequenceNumber":1};
   @ViewChild('orderNumBtn') orderNumberBtn;
-  constructor() { }
+  @ViewChild('dynamic', {read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
+  addSectionService: AddSectionService;
+  isValidComponent = true;
+
+  constructor(service: AddSectionService) {
+    this.addSectionService = service;
+  }
 
   ngOnInit() {}
+
+  addSection() {
+    this.addSectionService.setRootViewContainerRef(this.viewContainerRef);
+    this.addSectionService.addDynamicComponent();
+  }
+
+  deleteSection() {
+    this.isValidComponent = false;
+  }
 
   updateNumber(): void {
     const text = this.orderNumberBtn.nativeElement.innerText;
