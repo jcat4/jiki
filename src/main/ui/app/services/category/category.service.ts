@@ -41,7 +41,7 @@ export class CategoryService {
     }
 
     public getDirectoryItems() {
-        this.http.get('categories').subscribe(data => {
+        this.http.get('https://jiki-hackathon.herokuapp.com/categories').subscribe(data => {
             // Read the result field from the JSON response.
             this.directoryItems = data;
             this.directoryItems.forEach((element) => {
@@ -64,7 +64,7 @@ export class CategoryService {
     }
 
     public getDirectoryPagesDirect(element) {
-        this.http.get('pages/' + element.categoryID).subscribe(data => {
+        this.http.get('https://jiki-hackathon.herokuapp.com/pages/' + element.categoryID).subscribe(data => {
             // Read the result field from the JSON response.
             element.children = data;
         });
@@ -76,7 +76,7 @@ export class CategoryService {
             categoryId: categoryID,
             title: title
         };
-        this.http.post('pages', params).subscribe(data => {
+        this.http.post('https://jiki-hackathon.herokuapp.com/pages', params).subscribe(data => {
             window.location.reload(true);
         });
     }

@@ -12,14 +12,18 @@ export class EditViewComponent implements OnInit {
     errorMessage: String;
     pageInfo: IPage;
     summaryCard: String = 'Summary Info<br/>Info 1<br/>Info 2';
-    section: ISection = <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: "regular"};
+    section: ISection; //= <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: "regular"};
 
     constructor(private pageService: PageService) {}
 
     ngOnInit(): void {
-        this.pageService.getPageByID(1).subscribe(
-            page => this.pageInfo = page,
-            error => this.errorMessage = error);
+        this.pageService.getPageByID(this.pageService.currentId).subscribe(
+            page => {
+                this.pageInfo = page;
+                this.section = <ISection>{id: null, pageID: this.pageInfo.id, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: "regular"};
+            },
+            error => this.errorMessage = error
+            );
     }
 
 }

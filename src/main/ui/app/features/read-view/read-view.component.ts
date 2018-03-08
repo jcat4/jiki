@@ -13,11 +13,12 @@ export class ReadViewComponent implements OnInit {
   errorMessage: String;
   pageInfo: IPage;
   summaryCard: String = 'Summary Info<br/>Info 1<br/>Info 2';
+  card: String = '_Navigation Panel_';
 
     constructor(private pageService: PageService) {}
 
   ngOnInit(): void {
-      this.pageService.getPageByID(1).subscribe(
+      this.pageService.getPageByID(this.pageService.currentId).subscribe(
           page => this.pageInfo = page,
           error => this.errorMessage = error);
   }

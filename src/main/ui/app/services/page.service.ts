@@ -24,16 +24,14 @@ export class PageService {
                 const x = window.location.pathname;
                 const y = x.split('/');
                 const z = y[y.length - 2];
-                    try
-                    {
+                    try {
                         this.currentId = parseInt(z);
                     }
-                    catch(e)
-                    {
-                    }
+                    catch(e) {}
         }
     //get init page data here?
     }
+
   getPageTest(): Observable<ISection[]> {
     return this.http.get(this.pageUrl)
         .map((response: Response) => <ISection[]> response.json())

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CategoryService} from "../../services/category/category.service";
 import {PageService} from "../../services/page.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-navigation',
@@ -15,7 +16,8 @@ export class SideNavigationComponent implements OnInit {
 
 
   constructor(public categoryService: CategoryService,
-              private pageService: PageService) { }
+              private pageService: PageService,
+              private router: Router) { }
 
   ngOnInit() {}
 
@@ -45,5 +47,17 @@ export class SideNavigationComponent implements OnInit {
         event.stopPropagation();
         this.title = '';
 
+    }
+
+    refreshPage(id: number){
+        this.route(id);
+        if(window.location.href.indexOf('read') > -1) {
+            this.router.navigate(['/', 'edit']);
+        } else {
+            this.router.navigate(['/', '/read']);
+        }
+        setTimeout(() => {
+            this.router.navigate(['/', '/read']);
+        }, 10);
     }
 }
