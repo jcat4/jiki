@@ -1,10 +1,9 @@
 <h2 style="margin-top: 0.5em;" class='section-title'><markdown [data]="section.title"></markdown></h2>
 <hr style="margin-top: 7px;" class='title-break' color=#979797>
-<markdown [data]="section.markdown"></markdown><br/>
+<div class="section-text"><markdown [data]="section.markdown"></markdown><br/></div>
+
 <div style="display: inline-block;">
-  <p-card class='section-text'>
-  <div class='section-text'>
-  	<markdown class='section-text' [data]="card"></markdown>
-  </div>
+  <p-card>
+  	<markdown [data]="card"></markdown>
   </p-card>
 </div>

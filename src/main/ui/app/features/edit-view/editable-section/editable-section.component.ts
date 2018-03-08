@@ -38,6 +38,7 @@ export class EditableSectionComponent implements OnInit {
 
   deleteSection() {
     this.isValidComponent = false;
+    this.notesService.create('Section Deleted', 'The Section was successfully deleted', 'error', null);
   }
 
   saveSection() {
