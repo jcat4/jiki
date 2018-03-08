@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ISection } from '../../entity/section';
+import { ISection } from '../entity/section';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';

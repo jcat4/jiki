@@ -1,5 +1,5 @@
 import { Injectable, ComponentFactoryResolver, Inject, ReflectiveInjector } from '@angular/core';
-import {EditableSectionComponent} from "./editable-section/editable-section.component";
+import {EditableSectionComponent} from "../features/edit-view/editable-section/editable-section.component";
 
 @Injectable()
 export class AddSectionService {

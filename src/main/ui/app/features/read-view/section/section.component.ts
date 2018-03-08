@@ -8,6 +8,7 @@ import {ISection} from "../../../entity/section";
 })
 export class SectionComponent implements OnInit {
   @Input() section: ISection;
+  card: String = '_Card_';
   constructor() { }
 
   ngOnInit() {}

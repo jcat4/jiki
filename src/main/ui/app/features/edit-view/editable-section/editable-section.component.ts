@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {ISection} from "../../../entity/section";
-import {AddSectionService} from "../add-section.service";
+import {AddSectionService} from "../../../services/add-section.service";
+import {NotificationsService} from "angular2-notifications";
 
 
 @Component({
@@ -9,13 +10,22 @@ import {AddSectionService} from "../add-section.service";
   styleUrls: ['./editable-section.component.scss']
 })
 export class EditableSectionComponent implements OnInit {
-  @Input() section: ISection = <ISection>{"title": "", "body":"", "card":"", "sequenceNumber":1};
+  @Input() section: ISection = <ISection>{id: null, page_id: null, title: "", markdown: "", sequence_num: 0, parent_sequence: 0, type: null};
   @ViewChild('orderNumBtn') orderNumberBtn;
   @ViewChild('dynamic', {read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
   addSectionService: AddSectionService;
   isValidComponent = true;
+  card: String = '_Card_';
+  public options = {
+    position: ['center', "center"],
+      timeOut: 5000,
+      showProgressBar: false,
+      pauseOnHover: false,
+      clickToClose: true,
+      maxLength: 10
+  };
 
-  constructor(service: AddSectionService) {
+  constructor(service: AddSectionService, private notesService: NotificationsService) {
     this.addSectionService = service;
   }
 
@@ -28,6 +38,10 @@ export class EditableSectionComponent implements OnInit {
 
   deleteSection() {
     this.isValidComponent = false;
+  }
+
+  saveSection() {
+    this.notesService.create('Section Saved', 'The Section was successfully saved', 'success', null);
   }
 
   updateNumber(): void {
