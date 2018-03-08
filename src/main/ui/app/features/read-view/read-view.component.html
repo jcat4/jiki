@@ -1,11 +1,23 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
-  <td style="padding-right:25px; max-width: 74vw; width: 70vw;">
-    <div *ngFor="let section of pageInfo.section">
+  <td style="padding-right:25px; max-width: 74vw; width: 70vw;">   
+    <div>
+      <app-section class='section-text'[section]='pageInfo.section[0]'></app-section><br/><br/>
+    </div>
+    <div *ngIf="pageInfo.section[1]" class='index-card' style="display: inline-block;">
+      <p-card>
+        <markdown [data]="card"></markdown>
+      </p-card>
+    </div>
+    <div *ngFor="let section of pageInfo.section | slice:1">
       <app-section class='section-text'[section]='section'></app-section><br/><br/>
     </div>
     <div *ngIf="pageInfo.section == null">
       <h4 style="font-style: italic; color: gray;">Page Sections are not defined at this time.</h4>
     </div>
+  </td>
+
+  <td>
+
   </td>
 
   <td class='summary-card' style="vertical-align: top;">
