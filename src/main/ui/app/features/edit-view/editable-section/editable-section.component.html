@@ -1,7 +1,7 @@
 <div *ngIf="isValidComponent">
   <h2 style="margin-top: 0.5em;" ><input [value]="section.title" (input) = $event.target.value></h2>
   <hr style="margin-top: 7px;">
-  <textarea rows="5" cols="160" title="Body">{{section.markdown}}</textarea><br/>
+  <textarea rows="5" style="width: 70vw;" title="Body">{{section.markdown}}</textarea><br/>
   <div style="display: inline-block;">
     <p-card>
       <textarea rows="3" cols="40" title="Card">{{card}}</textarea>
