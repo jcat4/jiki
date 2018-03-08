@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let item of items" (click)="this.dropdownHandler($event, item);">
 
-        <a *ngIf="item.id" routerLink='{{path}}{{item.title}}/read' routerLinkActive="active">
+        <a *ngIf="item.id" routerLink='{{path}}{{item.title}}/{{item.id}}/read' (click)="route(item.id)" routerLinkActive="active">
             {{item.title}} </a>
 
 

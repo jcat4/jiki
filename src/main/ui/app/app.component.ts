@@ -19,8 +19,11 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
+      let initPath = window.location.pathname;
+      initPath = initPath.substring(0, initPath.length - 4)
       this.menuItems = [
-        {label: 'Read', icon: 'fa-eye', routerLink: 'read'},
-        {label: 'Edit', icon: 'fa-pencil', routerLink: 'edit'}];
+        {label: 'Read', icon: 'fa-eye',
+            routerLinkActiveOptions: {exact:true}, routerLink: initPath +'read'},
+        {label: 'Edit', routerLinkActiveOptions: {exact:true}, icon: 'fa-pencil', routerLink: initPath + 'edit'}];
   }
 }

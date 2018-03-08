@@ -13,9 +13,27 @@ import {IPage} from "../entity/page";
 export class PageService {
   //private pageUrl = 'http://localhost:5000/test/page'; // don't change this!!
   private pageUrl = 'https://jiki-hackathon.herokuapp.com/test/page'; // don't change this!!
+  public currentId: number;
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+    this.getCurrentIdPage();
+  }
 
+    getCurrentIdPage(){
+        if (this.currentId) {
+                const x = window.location.pathname;
+                const y = x.split('/');
+                const z = y[y.length - 2];
+                    try
+                    {
+                        this.currentId = parseInt(z);
+                    }
+                    catch(e)
+                    {
+                    }
+        }
+    //get init page data here?
+    }
   getPageTest(): Observable<ISection[]> {
     return this.http.get(this.pageUrl)
         .map((response: Response) => <ISection[]> response.json())

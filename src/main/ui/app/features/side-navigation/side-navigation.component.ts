@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CategoryService} from "../../services/category/category.service";
+import {PageService} from "../../services/page.service";
 
 @Component({
   selector: 'app-side-navigation',
@@ -13,10 +14,15 @@ export class SideNavigationComponent implements OnInit {
     public title ='';
 
 
-  constructor(public categoryService: CategoryService) { }
+  constructor(public categoryService: CategoryService,
+              private pageService: PageService) { }
 
-  ngOnInit() {console.log(this.items);}
+  ngOnInit() {}
 
+  route(id){
+      this.pageService.currentId = id;
+      console.log(this.pageService.currentId);
+  }
     dropdownHandler(event, item){
       item.open = !item.open;
       event.stopPropagation();

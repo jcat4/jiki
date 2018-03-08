@@ -37,7 +37,7 @@ export class CategoryService {
   ];
 
     constructor(private http: HttpClient) {
-        this.getDirectoryItems();
+            this.getDirectoryItems();
     }
 
     public getDirectoryItems() {
