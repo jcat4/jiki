@@ -5,6 +5,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {MenuItem} from 'primeng/api';
 import {CardModule} from 'primeng/card';
 import { MarkdownModule } from 'angular2-markdown';
+import {ButtonModule} from 'primeng/button';
 
 
 import { AppComponent } from './app.component';
@@ -13,10 +14,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { SideNavigationComponent } from './features/side-navigation/side-navigation.component';
 import { ReadViewComponent } from './features/read-view/read-view.component';
 import { EditViewComponent } from './features/edit-view/edit-view.component';
-import { SectionComponent } from './features/section/section.component';
+import { SectionComponent } from './features/read-view/section/section.component';
 import {PageService} from "./features/read-view/page.service";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
+import { EditableSectionComponent } from './features/edit-view/editable-section/editable-section.component';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import {RouterModule} from "@angular/router";
     ReadViewComponent,
     EditViewComponent,
     SectionComponent,
+    EditableSectionComponent
   ],
   imports: [
       BrowserModule,
@@ -37,7 +40,8 @@ import {RouterModule} from "@angular/router";
       RouterModule,
       TabMenuModule,
       CardModule,
-      MarkdownModule.forRoot()
+      MarkdownModule.forRoot(),
+      ButtonModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [PageService],

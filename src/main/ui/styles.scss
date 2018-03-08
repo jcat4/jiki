@@ -7,11 +7,11 @@
 @import '~prismjs/themes/prism.css';
 @import "variables";
 
-.bar-360 {
-	position: fixed;
-	background-color: white;
-	z-index: 999;
-}
+//.bar-360 {
+//	position: fixed;
+//	background-color: white;
+//	z-index: 999;
+//}
 
 .bar-360 row {
 	background-color: white;
@@ -21,16 +21,31 @@
 	border: none;
 }
 
-.ui-tabmenu-nav {
-	background-color: $primary-blue;
-	position: fixed;
-	width: 100%;
-	margin-top: 50px !important;
-	top: 0;
-	height: $top-bar-height;
-	border-radius: 0 !important;
-	border: none;
+//.ui-tabmenu-nav {
+//	background-color: $primary-blue;
+//	position: fixed;
+//	width: 100%;
+//	margin-top: 50px !important;
+//	top: 0;
+//	height: $top-bar-height;
+//	border-radius: 0 !important;
+//	border: none;
+//}
+
+body{
+  overflow: hidden;
 }
+
+//.ui-tabmenu-nav {
+//	background-color: $primary-blue;
+//	position: fixed;
+//	width: 100%;
+//	margin-top: 50px !important;
+//	top: 0;
+//	height: $top-bar-height;
+//	border-radius: 0 !important;
+//	border: none;
+//}
 
 #content {
 	padding-top: 97px;
@@ -39,6 +54,7 @@
 
 .not-side {
 	padding-left: 0 !important;
+  padding-right: 0px;
 }
 
 .shadow {

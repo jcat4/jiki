@@ -1,0 +1,14 @@
+<h2 style="margin-top: 0.5em;" ><input [value]="section.title" (input) = $event.target.value></h2>
+<hr style="margin-top: 7px;">
+<textarea rows="5" cols="160" title="Body">{{section.body}}</textarea><br/>
+<div style="display: inline-block;">
+  <p-card>
+    <textarea rows="3" cols="40" title="Card">{{section.card}}</textarea>
+  </p-card>
+</div>
+
+<br/><br/>
+<button #orderNumBtn (click)="updateNumber()" pButton type="button" label="Order: 1" class="ui-button-secondary"></button>
+<button pButton type="button" label="Save"></button>
+<button pButton type="button" label="Delete"  class="ui-button-danger"></button>
+<br/>
