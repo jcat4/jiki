@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PageService} from "../read-view/page.service";
+import {ISection} from "../../entity/section";
 
 @Component({
   selector: 'app-edit-view',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-view.component.scss']
 })
 export class EditViewComponent implements OnInit {
+    errorMessage: String;
+    pageInfo: ISection[];
+    summaryCard: String = 'Summary Info<br/>Info 1<br/>Info 2';
 
-  constructor() { }
+    constructor(private pageService: PageService) {}
 
-  ngOnInit() {
-  }
+    ngOnInit(): void {
+        this.pageService.getPage().subscribe(
+            page => this.pageInfo = page,
+            error => this.errorMessage = error);
+    }
 
 }
