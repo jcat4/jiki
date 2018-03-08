@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class PageService {
-  private pageUrl = 'http://winx-01331.jbhunt.com:8080/test/page';
+  private pageUrl = 'http://localhost:5000/test/page'; // don't change this!!
 
   constructor(private http: Http) {}
 
