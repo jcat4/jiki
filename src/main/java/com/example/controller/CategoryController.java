@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.entity.CategoryEntity;
 import com.example.model.Category;
 import com.example.repository.CategoryRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,8 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", maxAge = 3600) // for local testing
 @RestController
 @RequestMapping({"/categories"})
+@Slf4j
 public class CategoryController {
-
-    private Logger log =  LoggerFactory.getLogger(CategoryController.class);
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -40,6 +40,7 @@ public class CategoryController {
         for(CategoryEntity entity:categoryEntities) {
             Category category = new Category();
             category.setName(entity.getName());
+            category.setCategoryID(entity.getId());
 
             List<CategoryEntity> children = categoryRepository.findCategoriesByParentID(entity.getId());
 
@@ -48,6 +49,7 @@ public class CategoryController {
                 for (CategoryEntity child : children) {
                     Category childCategory = new Category();
                     childCategory.setName(child.getName());
+                    childCategory.setCategoryID(child.getId());
                     //log.info("name '{}'", child.getName());
                     childCategories.add(childCategory);
                 }
