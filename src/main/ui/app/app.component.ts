@@ -11,6 +11,7 @@ declare var JBH360Platform: any;
 export class AppComponent implements OnInit{
   title = 'app';
   menuItems: MenuItem[];
+  currentPath: String;
     public path = '/page/';
     public items = [
         {
@@ -45,8 +46,9 @@ export class AppComponent implements OnInit{
     if (window.location.pathname.toLowerCase().indexOf('jsessionid') > -1) {
       this.router.navigateByUrl(this.router.url);
     }
-    this.menuItems = [
-        {label: 'Read', icon: 'fa-eye', routerLink: '/read'},
-        {label: 'Edit', icon: 'fa-pencil', routerLink: '/edit'}];
+      //this.currentPath = window.location.href.split('.com/')[1].substring(0,window.location.href.split('.com/')[1].length - 4);
+      this.menuItems = [
+        {label: 'Read', icon: 'fa-eye', routerLink: 'read'},
+        {label: 'Edit', icon: 'fa-pencil', routerLink: 'edit'}];
   }
 }
