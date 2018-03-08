@@ -17,6 +17,10 @@
 	background-color: white;
 }
 
+.ui-tabmenuitem {
+	margin: 0 !important;
+}
+
 .ui-widget-content :not(.ui-card) {
 	border: none;
 }
@@ -52,6 +56,7 @@
 	height: $top-bar-height;
 	border-radius: 0 !important;
 	border: none;
+	padding-left: 45px !important;
 }
 //.ui-tabmenu-nav {
 //	background-color: $primary-blue;
@@ -66,6 +71,10 @@
 
 body{
   overflow: hidden;
+}
+
+.ui-tabmenu.ui-widget.ui-widget-content {
+	border: none !important;
 }
 
 //.ui-tabmenu-nav {
@@ -102,7 +111,7 @@ body{
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 
