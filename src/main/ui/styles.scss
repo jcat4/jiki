@@ -17,6 +17,10 @@
 	background-color: white;
 }
 
+.ui-widget-content :not(.ui-card) {
+	border: none;
+}
+
 .ui-tabmenu-nav {
 	background-color: $primary-blue;
 	position: fixed;
