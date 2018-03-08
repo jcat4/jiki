@@ -1,6 +1,14 @@
+@import "../variables";
+
 img{
-  height: 50px;
+  height: $bar-360-height;
 }
+
+.360-bar {
+  position: fixed;
+  background-color: white;
+}
+
 .header{
   max-width: inherit;
  & > .row{
