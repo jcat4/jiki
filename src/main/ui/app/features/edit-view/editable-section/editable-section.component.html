@@ -1,14 +1,16 @@
 <div *ngIf="isValidComponent">
-  <h2 style="margin-top: 0.5em;" ><input #title [value]="section.title" (input) = $event.target.value></h2>
-  <hr style="margin-top: 7px;">
-  <textarea #body rows="5" style="width: 70vw;" title="Body">{{section.markdown}}</textarea><br/>
-  <div style="display: inline-block;">
+  <h2 style="margin-top: 0.5em;" ><input class='section-title edit-field' #title [value]="section.title" (input) = $event.target.value></h2>
+  <hr style="margin-top: 18px;" class='title-break' color=#979797>
+  <textarea #body rows="5" style="width: 70vw;" title="Body" class="section-text edit-field">{{section.markdown}}</textarea>
+  <!--<div style="display: inline-block;">
     <p-card>
       <textarea rows="3" cols="40" title="Card">{{card}}</textarea>
     </p-card>
-  </div>
+  </div>-->
 
-  <br/><br/>
+  <br/>
+  <br/>
+
   <div style="padding-left: 50px; background-color: whitesmoke;">
     <template #dynamic></template>
   </div>
