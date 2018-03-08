@@ -12,5 +12,5 @@ public interface PageService {
 
     public void create(PageEntity pageEntity);
     public void update(PageEntity pageEntity);
-    public void delete(int pageID);
+    public void delete(Integer pageID);
 }
