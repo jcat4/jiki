@@ -21,6 +21,37 @@
 	border: none;
 }
 
+.ui-state-active {
+	top: 2px !important;
+	background-color: white !important;
+	background: white !important;
+	color: #002F43 !important;
+}
+
+.ui-state-active a {
+	color: #002F43 !important;
+}
+
+.ui-state-default {
+	top: 2px !important;
+	background-color: #E3E3E3;
+	background: #E3E3E3;
+	color: #939393 !important;
+}
+
+.ui-state-default a {
+	color: #939393;
+}
+
+.ui-tabmenu-nav {
+	background-color: $primary-blue;
+	position: fixed;
+	width: 100%;
+	margin-top: 50px !important;
+	top: 0;
+	height: $top-bar-height;
+	border-radius: 0 !important;
+	border: none;
 //.ui-tabmenu-nav {
 //	background-color: $primary-blue;
 //	position: fixed;
