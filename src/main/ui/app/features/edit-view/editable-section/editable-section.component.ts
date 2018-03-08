@@ -2,6 +2,7 @@ import {Component, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/co
 import {ISection} from "../../../entity/section";
 import {AddSectionService} from "../../../services/add-section.service";
 import {NotificationsService} from "angular2-notifications";
+import {PageService} from "../../../services/page.service";
 
 
 @Component({
@@ -10,12 +11,16 @@ import {NotificationsService} from "angular2-notifications";
   styleUrls: ['./editable-section.component.scss']
 })
 export class EditableSectionComponent implements OnInit {
-  @Input() section: ISection = <ISection>{id: null, page_id: null, title: "", markdown: "", sequence_num: 0, parent_sequence: 0, type: null};
+  @Input() section: ISection = <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: null};
   @ViewChild('orderNumBtn') orderNumberBtn;
+  @ViewChild('title') titleText;
+  @ViewChild('body') bodyText;
   @ViewChild('dynamic', {read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
   addSectionService: AddSectionService;
   isValidComponent = true;
   card: String = '_Card_';
+  newSection: ISection;
+  errorMessage: String;
   public options = {
     position: ['center', "center"],
       timeOut: 5000,
@@ -25,7 +30,9 @@ export class EditableSectionComponent implements OnInit {
       maxLength: 10
   };
 
-  constructor(service: AddSectionService, private notesService: NotificationsService) {
+  constructor(service: AddSectionService,
+              private notesService: NotificationsService,
+              private pageService: PageService) {
     this.addSectionService = service;
   }
 
@@ -42,6 +49,10 @@ export class EditableSectionComponent implements OnInit {
   }
 
   saveSection() {
+    this.newSection = (this.section.type == null) ?
+        <ISection>{id: null, pageID: 1, title: this.titleText.nativeElement.value, markdown: this.bodyText.nativeElement.value, sequenceNum: 1, parentSequence: 1, type: "regular"} :
+        <ISection>{id: this.section.id, pageID: this.section.pageID, title: this.titleText.nativeElement.value, markdown: this.bodyText.nativeElement.value, sequenceNum: parseInt(this.orderNumberBtn.nativeElement.innerText.split(': ')[1]), parentSequence: 1, type: "regular"};
+    this.pageService.saveSection(this.newSection).subscribe(error => this.errorMessage = <any>error);
     this.notesService.create('Section Saved', 'The Section was successfully saved', 'success', null);
   }
 

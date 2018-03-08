@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { PageService } from '../../services/page.service';
 import {ISection} from "../../entity/section";
+import {IPage} from "../../entity/page";
 
 
 @Component({
@@ -10,13 +11,13 @@ import {ISection} from "../../entity/section";
 })
 export class ReadViewComponent implements OnInit {
   errorMessage: String;
-  pageInfo: ISection[];
+  pageInfo: IPage;
   summaryCard: String = 'Summary Info<br/>Info 1<br/>Info 2';
 
     constructor(private pageService: PageService) {}
 
   ngOnInit(): void {
-      this.pageService.getPage().subscribe(
+      this.pageService.getPageByID(1).subscribe(
           page => this.pageInfo = page,
           error => this.errorMessage = error);
   }

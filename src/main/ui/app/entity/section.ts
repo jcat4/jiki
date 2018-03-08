@@ -1,10 +1,10 @@
 /* Defines the section entity */
 export interface ISection {
     id: number;
-    page_id: number;
+    pageID: number;
     title: String;
     markdown: String;
-    sequence_num: number;
-    parent_sequence: number;
+    sequenceNum: number;
+    parentSequence: number;
     type: String;
 }

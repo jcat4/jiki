@@ -1,11 +1,14 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
-  <td style="padding-right:25px; max-width: 74vw">
-    <div *ngFor="let section of pageInfo">
+  <td style="padding-right:25px; max-width: 74vw; width: 70vw;">
+    <div *ngFor="let section of pageInfo.section">
       <app-section class='section-text'[section]='section'></app-section><br/><br/>
+    </div>
+    <div *ngIf="pageInfo.section == null">
+      <h4 style="font-style: italic; color: gray;">Page Sections are not defined at this time.</h4>
     </div>
   </td>
 
-  <td class='summary-card' style="vertical-align: top">
+  <td class='summary-card' style="vertical-align: top;">
     <br/>
     <p-card *ngIf="summaryCard !== ''">
       <div class='summary-text'>

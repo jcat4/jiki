@@ -1,6 +1,9 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
   <td style="padding-right:25px;max-width: 74vw;">
-    <div *ngFor="let section of pageInfo">
+    <div *ngFor="let section2 of pageInfo.section">
+      <app-editable-section [section]='section2'></app-editable-section>
+    </div>
+    <div *ngIf="pageInfo.section == null">
       <app-editable-section [section]='section'></app-editable-section>
     </div>
   </td>
