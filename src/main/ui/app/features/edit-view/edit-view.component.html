@@ -1,14 +1,14 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
   <td style="padding-right:25px;">
     <div *ngFor="let section of pageInfo">
-      <app-editable-section [section]='section'></app-editable-section><br/><br/>
+      <app-editable-section [section]='section'></app-editable-section>
     </div>
   </td>
 
   <td style="vertical-align: top">
     <br/>
     <p-card *ngIf="summaryCard !== ''">
-      <div>{{summaryCard}}</div>
+      <markdown [data]="summaryCard"></markdown>
     </p-card>
   </td>
 </tr></tbody></table>

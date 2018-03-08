@@ -1,6 +1,6 @@
-<h2 style="margin-top: 0.5em;">{{section.title}}</h2>
+<h2 style="margin-top: 0.5em;"><markdown [data]="section.title"></markdown></h2>
 <hr style="margin-top: 7px;">
-<div>{{section.body}}</div><br/>
+<markdown [data]="section.body"></markdown><br/>
 <div style="display: inline-block;">
   <p-card>
   <markdown [data]="section.card"></markdown>

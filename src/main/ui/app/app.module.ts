@@ -6,6 +6,7 @@ import {MenuItem} from 'primeng/api';
 import {CardModule} from 'primeng/card';
 import { MarkdownModule } from 'angular2-markdown';
 import {ButtonModule} from 'primeng/button';
+import {FieldsetModule} from 'primeng/fieldset';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import {PageService} from "./features/read-view/page.service";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import { EditableSectionComponent } from './features/edit-view/editable-section/editable-section.component';
+import {AddSectionService} from "./features/edit-view/add-section.service";
 
 
 @NgModule({
@@ -41,10 +43,12 @@ import { EditableSectionComponent } from './features/edit-view/editable-section/
       TabMenuModule,
       CardModule,
       MarkdownModule.forRoot(),
-      ButtonModule
+      ButtonModule,
+      FieldsetModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [PageService],
+  providers: [PageService, AddSectionService],
+  entryComponents: [EditableSectionComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
