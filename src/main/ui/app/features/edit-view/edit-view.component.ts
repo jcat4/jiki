@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PageService} from "../read-view/page.service";
+import {PageService} from "../../services/page.service";
 import {ISection} from "../../entity/section";
 
 @Component({

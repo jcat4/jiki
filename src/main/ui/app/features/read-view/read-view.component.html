@@ -1,5 +1,5 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
-  <td style="padding-right:25px;">
+  <td style="padding-right:25px; max-width: 74vw">
     <div *ngFor="let section of pageInfo">
       <app-section class='section-text'[section]='section'></app-section><br/><br/>
     </div>
