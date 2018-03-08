@@ -9,6 +9,10 @@ public class Page {
     private String title;
     private List<SectionEntity> sections;
 
+    public void Page() {
+        sections = null;
+    }
+
     public String getTitle() {
         return title;
     }

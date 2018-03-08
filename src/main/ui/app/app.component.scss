@@ -4,10 +4,16 @@ img{
   height: $bar-360-height;
 }
 
-.360-bar {
-  position: fixed;
-  background-color: white;
+#content{
+  height: calc(100% - 45px);
+  overflow: auto;
 }
+
+
+  //.360-bar {
+//  position: fixed;
+//  background-color: white;
+//}
 
 .header{
   max-width: inherit;
@@ -26,8 +32,10 @@ img{
   max-width: inherit;
   height: calc(100% - 50px);
   & > .row{
+    height: 100%;
     & > app-side-navigation{
-      width: 250px;
+      width: 220px;
+      overflow: auto;
     }
   }
 }

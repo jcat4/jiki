@@ -7,18 +7,44 @@
 @import '~prismjs/themes/prism.css';
 @import "variables";
 
-.bar-360 {
-	position: fixed;
-	background-color: white;
-	z-index: 999;
-}
+//.bar-360 {
+//	position: fixed;
+//	background-color: white;
+//	z-index: 999;
+//}
 
 .bar-360 row {
 	background-color: white;
 }
 
+.ui-tabmenuitem {
+	margin: 0 !important;
+}
+
 .ui-widget-content :not(.ui-card) {
 	border: none;
+}
+
+.ui-state-active {
+	top: 2px !important;
+	background-color: white !important;
+	background: white !important;
+	color: #002F43 !important;
+}
+
+.ui-state-active a {
+	color: #002F43 !important;
+}
+
+.ui-state-default {
+	top: 2px !important;
+	background-color: #E3E3E3;
+	background: #E3E3E3;
+	color: #939393 !important;
+}
+
+.ui-state-default a {
+	color: #939393;
 }
 
 .ui-tabmenu-nav {
@@ -30,7 +56,37 @@
 	height: $top-bar-height;
 	border-radius: 0 !important;
 	border: none;
+	padding-left: 45px !important;
 }
+//.ui-tabmenu-nav {
+//	background-color: $primary-blue;
+//	position: fixed;
+//	width: 100%;
+//	margin-top: 50px !important;
+//	top: 0;
+//	height: $top-bar-height;
+//	border-radius: 0 !important;
+//	border: none;
+//}
+
+body{
+  overflow: hidden;
+}
+
+.ui-tabmenu.ui-widget.ui-widget-content {
+	border: none !important;
+}
+
+//.ui-tabmenu-nav {
+//	background-color: $primary-blue;
+//	position: fixed;
+//	width: 100%;
+//	margin-top: 50px !important;
+//	top: 0;
+//	height: $top-bar-height;
+//	border-radius: 0 !important;
+//	border: none;
+//}
 
 #content {
 	padding-top: 97px;
@@ -39,6 +95,7 @@
 
 .not-side {
 	padding-left: 0 !important;
+  padding-right: 0px;
 }
 
 .shadow {
@@ -54,7 +111,7 @@ body{
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 

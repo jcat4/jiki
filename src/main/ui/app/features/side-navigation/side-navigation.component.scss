@@ -2,13 +2,21 @@
 
 :host{
   background: $primary-blue;
+  font-family: Helvetica;
+  font-size: 14px;
   color: white;
 }
 
 ul{
   list-style-type:none;
   padding-left: 10px;
+  padding-top: 10px;
   & > li {
     cursor: pointer;
   }
 }
+
+a {
+	color: $light-blue;
+}
+

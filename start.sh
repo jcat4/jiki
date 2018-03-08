@@ -1,1 +1,1 @@
-mvn clean; mvn install; heroku local:start
+heroku pg:killall; mvn clean; mvn install; heroku local:start
