@@ -17,13 +17,23 @@ export class EditViewComponent implements OnInit {
     constructor(private pageService: PageService) {}
 
     ngOnInit(): void {
-        this.pageService.getPageByID(this.pageService.currentId).subscribe(
-            page => {
-                this.pageInfo = page;
-                this.section = <ISection>{id: null, pageID: this.pageInfo.id, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: "regular"};
-            },
-            error => this.errorMessage = error
+        if(this.pageService.currentId) {
+            this.pageService.getPageByID(this.pageService.currentId).subscribe(
+                page => {
+                    this.pageInfo = page;
+                    this.section = <ISection>{
+                        id: null,
+                        pageID: this.pageInfo.id,
+                        title: "",
+                        markdown: "",
+                        sequenceNum: 0,
+                        parentSequence: 0,
+                        type: "regular"
+                    };
+                },
+                error => this.errorMessage = error
             );
+        }
     }
 
 }

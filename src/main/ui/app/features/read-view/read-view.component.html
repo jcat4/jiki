@@ -1,9 +1,9 @@
 <table *ngIf="pageInfo && pageInfo != null"><tbody><tr>
   <td style="padding-right:25px; max-width: 74vw; width: 70vw;">   
     <div>
-      <app-section class='section-text'[section]='pageInfo.section[0]'></app-section>
+      <app-section *ngIf='pageInfo.section' class='section-text'[section]='pageInfo.section[0]'></app-section>
     </div>
-    <div *ngIf="pageInfo.section[1]" class='index-card' style="display: inline-block;">
+    <div *ngIf="pageInfo.section && pageInfo.section[1]" class='index-card' style="display: inline-block;">
       <p-card>
         <markdown [data]="card"></markdown>
       </p-card>

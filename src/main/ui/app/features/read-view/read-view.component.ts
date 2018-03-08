@@ -18,9 +18,12 @@ export class ReadViewComponent implements OnInit {
     constructor(private pageService: PageService) {}
 
   ngOnInit(): void {
-      this.pageService.getPageByID(this.pageService.currentId).subscribe(
-          page => this.pageInfo = page,
-          error => this.errorMessage = error);
+      if(this.pageService.currentId) {
+          this.pageService.getPageByID(this.pageService.currentId).subscribe(
+              page => this.pageInfo = page,
+              error => this.errorMessage = error);
+      }
   }
+
 
 }
