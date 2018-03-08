@@ -10,7 +10,8 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class PageService {
-  private pageUrl = 'http://jiki-hackathon.herokuapp.com/test/page'; // don't change this!!
+  //private pageUrl = 'http://localhost:5000/test/page'; // don't change this!!
+  private pageUrl = 'https://jiki-hackathon.herokuapp.com/test/page'; // don't change this!!
 
   constructor(private http: Http) {}
 
