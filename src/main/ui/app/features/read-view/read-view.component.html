@@ -8,7 +8,9 @@
   <td class='summary-card' style="vertical-align: top">
     <br/>
     <p-card *ngIf="summaryCard !== ''">
-      <markdown [data]="summaryCard"></markdown>
+      <div class='summary-text'>
+        <markdown [data]="summaryCard"></markdown>
+      </div>
     </p-card>
   </td>
 </tr></tbody></table>
