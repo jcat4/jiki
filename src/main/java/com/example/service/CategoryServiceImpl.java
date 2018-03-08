@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService {
                 tempPage.setId(page.getId());
                 pages.add(tempPage);
             }
-            category.setPages(pages);
+            category.setPage(pages);
 
             List<CategoryEntity> children = categoryRepository.findCategoriesByParentID(entity.getId());
 
@@ -68,7 +68,7 @@ public class CategoryServiceImpl implements CategoryService {
                         tempPage.setTitle(page.getTitle());
                         pagesAgain.add(tempPage);
                     }
-                    category.setPages(pagesAgain);
+                    category.setPage(pagesAgain);
                 }
 
                 category.setChildren(childCategories);

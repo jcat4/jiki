@@ -40,7 +40,7 @@ public class PageServiceImpl implements PageService {
             page.setTitle(pageEntity.getTitle());
 
             if(sectionEntities.size() > 0) {
-                page.setSections(sectionEntities);
+                page.setSection(sectionEntities);
             }
         } else {
             //log.error("No page found with id: " + pageID);
