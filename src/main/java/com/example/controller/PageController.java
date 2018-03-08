@@ -1,22 +1,13 @@
 package com.example.controller;
 
 import com.example.entity.PageEntity;
-import com.example.entity.SectionEntity;
-import com.example.model.Category;
 import com.example.model.Page;
-import com.example.repository.CategoryRepository;
-import com.example.repository.PageRepository;
-import com.example.repository.SectionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.example.service.PageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,9 +20,6 @@ public class PageController {
     private Logger log =  LoggerFactory.getLogger(PageController.class);
 
     @Autowired
-    private PageRepository pageRepository;
-
-    @Autowired
     private PageService pageService;
 
     @GetMapping(path = {"/{categoryID}"})
@@ -41,9 +29,16 @@ public class PageController {
 
     @GetMapping(path = {"/page/{pageID}"})
     public Page findByPageID(@PathVariable("pageID") int pageID) {
-        Page page = new Page();
-        PageEntity pageEntity = pageService.findByPageId(pageID);
+        return pageService.findByPageId(pageID);
+    }
 
-        return page;
+    @PostMapping
+    public void create(@RequestBody PageEntity pageEntity){
+        pageService.create(pageEntity);
+    }
+
+    @DeleteMapping(path = {"/{pageID}"})
+    public void delete(@PathVariable("pageID") int pageID) {
+        pageService.delete(pageID);
     }
 }
