@@ -61,6 +61,7 @@ export class EditableSectionComponent implements OnInit {
     const text = this.orderNumberBtn.nativeElement.innerText;
     let num = parseInt(text.split(': ')[1]);
     num += 1;
+    if(num == 11) num = 1;
     this.orderNumberBtn.nativeElement.innerText = '_Order: ' + num + '__';
   }
 

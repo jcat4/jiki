@@ -16,7 +16,7 @@
   </div>
   <button (click)="addSection()" pButton type="button" label="Add a Section" icon="fa fa-anchor" class="ui-button-secondary"></button>
   <br/><br/>
-  <button #orderNumBtn (click)="updateNumber()" pButton type="button" label="Order: 1" class="ui-button-warning"></button>
+  <button #orderNumBtn (click)="updateNumber()" pButton type="button" class="ui-button-warning orderSpecial">_Order: {{section.sequenceNum}}_</button>
   <button pButton (click)="saveSection()" type="button" label="Save" class="ui-button-success"></button>
   <button pButton (click)="deleteSection(section.id)" type="button" label="Delete"  class="ui-button-danger"></button>
   <br/><br/><br/>

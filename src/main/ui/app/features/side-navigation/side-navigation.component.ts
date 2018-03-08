@@ -58,6 +58,6 @@ export class SideNavigationComponent implements OnInit {
         }
         setTimeout(() => {
             this.router.navigate(['/', '/read']);
-        }, 10);
+        }, 5);
     }
 }
