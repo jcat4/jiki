@@ -22,6 +22,8 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import { EditableSectionComponent } from './features/edit-view/editable-section/editable-section.component';
 import {AddSectionService} from "./services/add-section.service";
+import {CategoryService} from "./services/category/category.service";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -46,10 +48,12 @@ import {AddSectionService} from "./services/add-section.service";
       MarkdownModule.forRoot(),
       ButtonModule,
       FieldsetModule,
-      SimpleNotificationsModule.forRoot()
+      SimpleNotificationsModule.forRoot(),
+      FieldsetModule,
+      FormsModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [PageService, AddSectionService],
+  providers: [PageService, CategoryService, AddSectionService],
   entryComponents: [EditableSectionComponent],
   bootstrap: [AppComponent]
 })

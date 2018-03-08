@@ -10,7 +10,7 @@
 </div>
 <div class="container sidebar">
     <div class="row">
-        <app-side-navigation [items]="items" [path]="path"></app-side-navigation>
+        <app-side-navigation [items]="categoryService.directoryItems" [path]="path"></app-side-navigation>
         <div class="col not-side">
             <p-tabMenu [model]="menuItems"></p-tabMenu>
             <div id='content'>

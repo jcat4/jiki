@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CategoryService} from "../../services/category/category.service";
 
 @Component({
   selector: 'app-side-navigation',
@@ -9,11 +10,34 @@ export class SideNavigationComponent implements OnInit {
 
     @Input() public items;
     @Input() public path;
+    public title ='';
 
 
-  constructor() { }
+  constructor(public categoryService: CategoryService) { }
 
-  ngOnInit() {console.log(this.path);
+  ngOnInit() {console.log(this.items);}
+
+    dropdownHandler(event, item){
+      item.open = !item.open;
+      event.stopPropagation();
+
+      if(item.children) {
+          item.children.forEach((element) => {
+              if (element.children == null && !element.id) {
+                  this.categoryService.getDirectoryPagesDirect(element);
+              }
+          });
+      }
   }
 
+    createPage(item, event)
+    {
+
+        item.create = false;
+        if(this.title !== '')
+        this.categoryService.addDirectoryPage(this.title,item.categoryID);
+        event.stopPropagation();
+        this.title = '';
+
+    }
 }

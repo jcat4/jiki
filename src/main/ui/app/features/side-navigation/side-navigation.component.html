@@ -1,10 +1,25 @@
 <ul>
-    <li *ngFor="let item of items" (click)="item.open = !item.open; $event.stopPropagation()">
-        <a *ngIf="!item.children" routerLink='{{path}}{{item.name}}/read' routerLinkActive="active"> {{item.name}} </a>
-        <span *ngIf="item.children">{{item.name}}
+    <li *ngFor="let item of items" (click)="this.dropdownHandler($event, item);">
+
+        <a *ngIf="item.id" routerLink='{{path}}{{item.title}}/read' routerLinkActive="active">
+            {{item.title}} </a>
+
+
+        <span class="category" *ngIf="!item.id">{{item.name}}
             <span *ngIf="item.children">{{(item.open)? '▼':'▶'}}</span>
+            <span *ngIf=" !item.create"  class="plus"
+                  (click)="item.create=true; $event.stopPropagation();">+
+                </span>
         </span>
-        <app-side-navigation *ngIf="item.children && item.open" [items]="item.children"
+
+        <div tabindex="0" *ngIf="item.create"
+             (click)="$event.stopPropagation()" class="create">
+            <span class="cancel" (click)="item.create = false;">x</span>
+            <input autofocus type="text" placeholder="title" [(ngModel)]="title">
+            <span class="plus-create" (click)="createPage(item, $event);">+</span></div>
+
+
+        <app-side-navigation *ngIf="item.children != null && item.open && !item.id" [items]="item.children"
                              [path]="path + item.name + '/'"></app-side-navigation>
     </li>
 </ul>

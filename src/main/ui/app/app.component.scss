@@ -5,7 +5,7 @@ img{
 }
 
 #content{
-  height: calc(100% - 45px);
+  height: calc(100% - 40px);
   overflow: auto;
   padding-top: 50px;
 }
@@ -28,6 +28,9 @@ img{
    }
  }
 
+}
+.not-side{
+  width: calc(100% - 220px);
 }
 .sidebar{
   max-width: inherit;

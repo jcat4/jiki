@@ -19,3 +19,33 @@ a {
 	color: $light-blue;
 }
 
+.plus{
+  visibility: hidden;
+}
+
+.create{
+  display: flex;
+  border: 1px solid black;
+  box-shadow: #002F43;
+  & > input{
+    width: calc(100% - 40px);
+  }
+  & > span{
+    padding-top:3px;
+    padding-left:3px;
+    width: 15px;
+  }
+  & > .plus-create{
+    background:  green;
+  }
+  & > .cancel{
+  background : red;
+  }
+}
+.category:hover {
+  & > .plus{
+    visibility: visible;
+    color: greenyellow;
+    position: relative;
+  }
+}
