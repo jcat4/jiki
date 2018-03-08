@@ -22,7 +22,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/getCategories")
+    @GetMapping
     public ResponseEntity<List<Category>> getCategories(final HttpServletRequest request){
         return new ResponseEntity<>(categoryService.getAllCategories(), HttpStatus.OK);
     }
