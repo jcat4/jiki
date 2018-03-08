@@ -37,6 +37,13 @@ export class PageService {
           .catch(this.handleError);
     }
 
+    deleteSection(id: number): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers });
+        return this.http.delete('https://jiki-hackathon.herokuapp.com/sections/' + id, options)
+            .catch(this.handleError);
+    }
+
     private handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console

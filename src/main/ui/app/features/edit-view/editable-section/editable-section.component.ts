@@ -43,8 +43,9 @@ export class EditableSectionComponent implements OnInit {
     this.addSectionService.addDynamicComponent();
   }
 
-  deleteSection() {
+  deleteSection(id: number) {
     this.isValidComponent = false;
+    this.pageService.deleteSection(id).subscribe(error => this.errorMessage = <any>error);
     this.notesService.create('Section Deleted', 'The Section was successfully deleted', 'error', null);
   }
 

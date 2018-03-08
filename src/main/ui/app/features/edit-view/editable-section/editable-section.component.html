@@ -16,7 +16,7 @@
   <br/><br/>
   <button #orderNumBtn (click)="updateNumber()" pButton type="button" label="Order: 1" class="ui-button-warning"></button>
   <button pButton (click)="saveSection()" type="button" label="Save" class="ui-button-success"></button>
-  <button pButton (click)="deleteSection()" type="button" label="Delete"  class="ui-button-danger"></button>
+  <button pButton (click)="deleteSection(section.id)" type="button" label="Delete"  class="ui-button-danger"></button>
   <br/><br/><br/>
   <simple-notifications [options]="options"></simple-notifications>
 </div>
