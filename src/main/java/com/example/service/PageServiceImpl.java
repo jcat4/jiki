@@ -56,11 +56,17 @@ public class PageServiceImpl implements PageService {
 
     @Override
     public void update(PageEntity pageEntity) {
+        if(pageEntity.getId() == null) {
+            throw new RuntimeException("No ID available to update");
+        }
         pageRepository.saveAndFlush(pageEntity);
     }
 
     @Override
-    public void delete(int pageID) {
+    public void delete(Integer pageID) {
+        if(pageID == null) {
+            throw new RuntimeException("No ID available to delete");
+        }
         pageRepository.deleteById(pageID);
     }
 }

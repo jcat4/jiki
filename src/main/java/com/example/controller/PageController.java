@@ -2,8 +2,6 @@ package com.example.controller;
 
 import com.example.entity.PageEntity;
 import com.example.model.Page;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.example.service.PageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping({"/pages"})
 public class PageController {
-
-    private Logger log =  LoggerFactory.getLogger(PageController.class);
-
     @Autowired
     private PageService pageService;
 
