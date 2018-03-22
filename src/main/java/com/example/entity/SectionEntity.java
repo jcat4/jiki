@@ -39,4 +39,7 @@ public class SectionEntity {
     @Column(name = "type")
     private String type;
 
+    @Column(name = "nesting_level")
+    private Integer nestingLevel;
+
 }

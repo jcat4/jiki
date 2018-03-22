@@ -7,4 +7,5 @@ export interface ISection {
     sequenceNum: number;
     parentSequence: number;
     type: String;
+    nestingLevel: number;
 }
