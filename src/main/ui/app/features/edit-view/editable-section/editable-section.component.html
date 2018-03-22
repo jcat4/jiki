@@ -1,24 +1,40 @@
-<div *ngIf="isValidComponent">
-  <h2 style="margin-top: 0.5em;" ><input class='section-title edit-field' #title [value]="section.title" (input) = $event.target.value></h2>
-  <hr style="margin-top: 18px;" class='title-break' color=#979797>
-  <textarea #body rows="5" style="width: 70vw;" title="Body" class="section-text edit-field">{{section.markdown}}</textarea>
-  <!--<div style="display: inline-block;">
-    <p-card>
-      <textarea rows="3" cols="40" title="Card">{{card}}</textarea>
-    </p-card>
-  </div>-->
 
-  <br/>
-  <br/>
+<div *ngIf="isValidComponent" pDraggable="dragOpenSection"
+     (onDragStart)="dragStart($event, this)">
+  <h2 style="margin-top: 0.5em;" >
+    <input class='section-title edit-field' #title
+           [value]="section.title"
+           (input) = $event.target.value
+           (mouseleave)="saveChanges()">
+  </h2>
+  <hr style="margin-top: 18px;" class='title-break' color=#979797>
+  <textarea #bodyText rows="5" title="Body" style="width: 100%;"
+            class="section-text edit-field" id="bodyText"
+            (click)="op.toggle($event);processText()"
+            (mouseleave)="saveChanges()">{{section.markdown}}</textarea>
+
+  <div pDroppable="dragSection" (onDrop)="addSection()"
+       (dragenter) ="showNestText = true;" (dragleave) ="showNestText = false;" (mouseleave)="showNestText = false;">
+    <i *ngIf="showNestText" class="fa fa-arrow-down" style="color:lightgrey;text-shadow: 0px 1px 1px black, 0px 0px 0px black;">&nbsp; New Child -- Drop Here!</i>
+    <br/>
+  </div>
+  <div pDroppable="dragSection" (onDrop)="addNewSibling()"
+       (dragenter) ="showAddText = true;" (dragleave) ="showAddText = false;" (mouseleave)="showAddText = false;">
+    <i *ngIf="showAddText" class="fa fa-arrow-left" style="color: lightgreen; text-shadow: 0px 1px 1px green, 0px 0px 0px black">&nbsp; New Sibling -- Drop Here!</i>
+    <br/>
+  </div>
+  <div pDroppable="dragOpenSection" (onDrop)="organizeSection()"
+       (dragenter) ="showSequenceText = true;" (dragleave) ="showSequenceText = false;" (mouseleave)="showSequenceText = false;">
+    <i *ngIf="showSequenceText" class="fa fa-arrows" style="color:orange;text-shadow: 0px 1px 1px red, 0px 0px 0px black;">&nbsp; Reorder Section -- Drop Here!</i>
+    <br/>
+  </div>
 
   <div style="padding-left: 50px; background-color: whitesmoke;">
     <template #dynamic></template>
   </div>
-  <button (click)="addSection()" pButton type="button" label="Add a Section" icon="fa fa-anchor" class="ui-button-secondary"></button>
-  <br/><br/>
-  <button #orderNumBtn (click)="updateNumber()" pButton type="button" class="ui-button-warning orderSpecial">_Order: {{section.sequenceNum}}_</button>
-  <button pButton (click)="saveSection()" type="button" label="Save" class="ui-button-success"></button>
-  <button pButton (click)="deleteSection(section.id)" type="button" label="Delete"  class="ui-button-danger"></button>
-  <br/><br/><br/>
+
   <simple-notifications [options]="options"></simple-notifications>
+  <p-overlayPanel #op>
+    <h3>Future Text Editor Toolbar :)</h3>
+  </p-overlayPanel>
 </div>

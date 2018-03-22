@@ -59,7 +59,7 @@ export class CategoryService {
                 element.children = element.page;
             }
             });
-            console.log(this.directoryItems);
+            //console.log(this.directoryItems);
         });
     }
 

@@ -7,6 +7,8 @@ import {CardModule} from 'primeng/card';
 import { MarkdownModule } from 'angular2-markdown';
 import {ButtonModule} from 'primeng/button';
 import {FieldsetModule} from 'primeng/fieldset';
+import {DragDropModule} from 'primeng/dragdrop';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {SimpleNotificationsModule} from "angular2-notifications";
 
 
@@ -24,6 +26,7 @@ import { EditableSectionComponent } from './features/edit-view/editable-section/
 import {AddSectionService} from "./services/add-section.service";
 import {CategoryService} from "./services/category/category.service";
 import {FormsModule} from "@angular/forms";
+import {BlockUIModule} from "primeng/blockui";
 
 
 @NgModule({
@@ -44,9 +47,12 @@ import {FormsModule} from "@angular/forms";
       TabMenuModule,
       RouterModule,
       TabMenuModule,
+      DragDropModule,
       CardModule,
       MarkdownModule.forRoot(),
       ButtonModule,
+      OverlayPanelModule,
+      BlockUIModule,
       FieldsetModule,
       SimpleNotificationsModule.forRoot(),
       FieldsetModule,

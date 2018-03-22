@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef} from '@angular/core';
 import {ISection} from "../../../entity/section";
 import {AddSectionService} from "../../../services/add-section.service";
 import {NotificationsService} from "angular2-notifications";
@@ -12,15 +12,16 @@ import {PageService} from "../../../services/page.service";
 })
 export class EditableSectionComponent implements OnInit {
   @Input() section: ISection = <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: null};
-  @ViewChild('orderNumBtn') orderNumberBtn;
   @ViewChild('title') titleText;
-  @ViewChild('body') bodyText;
+  @ViewChild('bodyText') bodyText;
   @ViewChild('dynamic', {read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
+  @Output() report: EventEmitter<string> = new EventEmitter<string>();
   addSectionService: AddSectionService;
   isValidComponent = true;
   card: String = '_Card_';
   newSection: ISection;
   errorMessage: String;
+  showAddText: boolean = false; showNestText: boolean = false; showSequenceText: boolean = false;
   public options = {
     position: ['center', "center"],
       timeOut: 5000,
@@ -39,30 +40,63 @@ export class EditableSectionComponent implements OnInit {
   ngOnInit() {}
 
   addSection() {
+    this.showAddText = false;
+    this.showNestText = false;
     this.addSectionService.setRootViewContainerRef(this.viewContainerRef);
     this.addSectionService.addDynamicComponent();
+    setTimeout(() => {
+        this.report.emit('update');
+    }, 5000)
   }
 
-  deleteSection(id: number) {
-    this.isValidComponent = false;
-    this.pageService.deleteSection(id).subscribe(error => this.errorMessage = <any>error);
-    this.notesService.create('Section Deleted', 'The Section was successfully deleted', 'error', null);
-  }
-
-  saveSection() {
-    this.newSection = (this.section.type == null) ?
-        <ISection>{id: null, pageID: 1, title: this.titleText.nativeElement.value, markdown: this.bodyText.nativeElement.value, sequenceNum: 1, parentSequence: 1, type: "regular"} :
-        <ISection>{id: this.section.id, pageID: this.section.pageID, title: this.titleText.nativeElement.value, markdown: this.bodyText.nativeElement.value, sequenceNum: parseInt(this.orderNumberBtn.nativeElement.innerText.split(': ')[1]), parentSequence: 1, type: "regular"};
-    this.pageService.saveSection(this.newSection).subscribe(error => this.errorMessage = <any>error);
+  saveSection(section: ISection) {
+    this.pageService.saveSection(section).subscribe(error => this.errorMessage = <any>error);
     this.notesService.create('Section Saved', 'The Section was successfully saved', 'success', null);
+      setTimeout(() => {
+          this.report.emit('update');
+      }, 100);
   }
 
-  updateNumber(): void {
-    const text = this.orderNumberBtn.nativeElement.innerText;
-    let num = parseInt(text.split(': ')[1]);
-    num += 1;
-    if(num == 11) num = 1;
-    this.orderNumberBtn.nativeElement.innerText = '_Order: ' + num + '__';
+  dragStart(event, instance){
+    this.pageService.draggedSection = this.section;
+    this.pageService.draggedSectionClass = this;
+        //event.currentTarget.attributes.class;
   }
+
+
+    processText(){
+      console.log('Text selected: ' + window.getSelection().toString());
+     // console.log('Start: ' + document.getElementById('bodyText').selectionStart);
+      //console.log('End: ' + document.getElementById('bodyText').selectionEnd);
+    }
+
+    organizeSection(){
+        let draggedSection: ISection = this.pageService.draggedSection;
+        draggedSection.sequenceNum = this.section.sequenceNum + 1;
+        this.saveSection(draggedSection);
+        this.pageService.draggedSection = null;
+    }
+
+    addNewSibling(){
+        let siblingSection: ISection = <ISection>{
+            id: null,
+            pageID: this.pageService.currentId,
+            title: "", markdown: "",
+            sequenceNum: this.section.sequenceNum + 1,
+            parentSequence: this.section.parentSequence,
+            type: "regular"};
+        this.saveSection(siblingSection);
+    }
+
+    saveChanges(){
+        if(this.section.markdown != this.bodyText.nativeElement.value ||
+            (this.section.title != this.titleText.nativeElement.value)) {
+          this.section.title = this.titleText.nativeElement.value;
+          this.section.markdown = this.bodyText.nativeElement.value;
+          this.saveSection(this.section);
+          console.log('Saving on mouseleave');
+        }
+    }
+
 
 }

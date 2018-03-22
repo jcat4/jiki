@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {IPage} from "../entity/page";
+import {EditableSectionComponent} from "../features/edit-view/editable-section/editable-section.component";
 
 
 @Injectable()
@@ -14,6 +15,8 @@ export class PageService {
   //private pageUrl = 'http://localhost:5000/test/page'; // don't change this!!
   private pageUrl = 'https://jiki-hackathon.herokuapp.com/test/page'; // don't change this!!
   public currentId: number;
+  public draggedSection: ISection;
+  public draggedSectionClass: EditableSectionComponent;
 
   constructor(private http: Http) {
     this.getCurrentIdPage();
@@ -32,17 +35,10 @@ export class PageService {
     //get init page data here?
     }
 
-  getPageTest(): Observable<ISection[]> {
-    return this.http.get(this.pageUrl)
-        .map((response: Response) => <ISection[]> response.json())
-        .do(data => console.log('All: ' + JSON.stringify(data)))
-        .catch(this.handleError);
-  }
-
     getPageByID(id: number): Observable<IPage> {
         return this.http.get('https://jiki-hackathon.herokuapp.com/pages/page/' + id)
             .map((response: Response) => <IPage> response.json())
-            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .do(data => console.log('Pulled getPageByID'))
             .catch(this.handleError);
     }
 
