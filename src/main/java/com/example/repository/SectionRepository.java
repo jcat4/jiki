@@ -15,6 +15,7 @@ public interface SectionRepository extends JpaRepository<SectionEntity, Integer>
 
     @Query(value = "SELECT wse " +
             " FROM SectionEntity AS wse " +
-            " WHERE wse.pageID = :pageID")
+            " WHERE wse.pageID = :pageID" +
+            " ORDER BY wse.parentSequence, wse.sequenceNum")
     List<SectionEntity> findAllSectionsForPage(@Param("pageID")Integer pageID);
 }
