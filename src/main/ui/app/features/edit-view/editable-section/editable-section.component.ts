@@ -11,7 +11,7 @@ import {PageService} from "../../../services/page.service";
   styleUrls: ['./editable-section.component.scss']
 })
 export class EditableSectionComponent implements OnInit {
-  @Input() section: ISection = <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: null};
+  @Input() section: ISection = <ISection>{id: null, pageID: null, title: "", markdown: "", sequenceNum: 0, parentSequence: 0, type: null, nestingLevel: null};
   @ViewChild('title') titleText;
   @ViewChild('bodyText') bodyText;
   @ViewChild('dynamic', {read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
@@ -84,7 +84,9 @@ export class EditableSectionComponent implements OnInit {
             title: "", markdown: "",
             sequenceNum: this.section.sequenceNum + 1,
             parentSequence: this.section.parentSequence,
-            type: "regular"};
+            type: "regular",
+            nestingLevel: this.section.nestingLevel
+        };
         this.saveSection(siblingSection);
     }
 

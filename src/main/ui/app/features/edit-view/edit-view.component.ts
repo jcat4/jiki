@@ -50,7 +50,8 @@ export class EditViewComponent implements OnInit {
                         markdown: "",
                         sequenceNum: 0,
                         parentSequence: 0,
-                        type: "regular"
+                        type: "regular",
+                        nestingLevel: null
                     };
                 },
                 error => this.errorMessage = error
