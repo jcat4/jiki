@@ -14,6 +14,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/core": "0.0.23",
+    "@angular-devkit/schematics": "0.0.42",
     "@angular/animations": "^5.2.7",
     "@angular/cli": "1.6.5",
     "@angular/common": "^5.2.0",
@@ -28,8 +30,11 @@
     "angular2-markdown": "^2.2.3",
     "angular2-notifications": "^0.9.7",
     "bootstrap": "^4.0.0",
+    "codemirror": "^5.36.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "ngx-bootstrap": "^2.0.3",
+    "ngx-editor": "^3.3.0-rc.13",
     "primeng": "^5.2.1",
     "rxjs": "^5.5.7",
     "zone.js": "^0.8.19"

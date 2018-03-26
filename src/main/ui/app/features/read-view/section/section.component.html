@@ -1,5 +1,5 @@
-<h2 style="margin-top: 0.5em;" class='section-title'><markdown [data]="section.title"></markdown></h2>
-<hr style="margin-top: 7px;" class='title-break' color=#979797>
+<h2 *ngIf="section.sequenceNum == 1 && section.parentSequence == 1" style="margin-top: 0.5em;" class='section-title'><markdown [data]="section.title"></markdown></h2>
+<hr *ngIf="section.sequenceNum == 1 && section.parentSequence == 1" style="margin-top: 7px;" class='title-break' color=#979797>
 <div class="section-text"><markdown [data]="section.markdown"></markdown><br/></div>
 
 <!--<div class='index-card' style="display: inline-block;">

@@ -10,6 +10,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {DragDropModule} from 'primeng/dragdrop';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {SimpleNotificationsModule} from "angular2-notifications";
+import { NgxEditorModule } from 'ngx-editor';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ import {AddSectionService} from "./services/add-section.service";
 import {CategoryService} from "./services/category/category.service";
 import {FormsModule} from "@angular/forms";
 import {BlockUIModule} from "primeng/blockui";
+import { TextEditorComponent } from './features/text-editor/text-editor.component';
+import {ColorPickerModule} from "primeng/primeng";
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import {BlockUIModule} from "primeng/blockui";
     ReadViewComponent,
     EditViewComponent,
     SectionComponent,
-    EditableSectionComponent
+    EditableSectionComponent,
+    TextEditorComponent
   ],
   imports: [
       BrowserModule,
@@ -53,10 +57,12 @@ import {BlockUIModule} from "primeng/blockui";
       ButtonModule,
       OverlayPanelModule,
       BlockUIModule,
+      ColorPickerModule,
       FieldsetModule,
       SimpleNotificationsModule.forRoot(),
       FieldsetModule,
-      FormsModule
+      FormsModule,
+      NgxEditorModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [PageService, CategoryService, AddSectionService],

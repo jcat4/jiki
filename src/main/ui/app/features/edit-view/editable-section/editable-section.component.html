@@ -1,17 +1,22 @@
 
 <div *ngIf="isValidComponent" pDraggable="dragOpenSection"
      (onDragStart)="dragStart($event, this)">
-  <h2 style="margin-top: 0.5em;" >
+  <h2 *ngIf="section.sequenceNum == 1 && section.parentSequence == 1" style="margin-top: 0.5em;" >
     <input class='section-title edit-field' #title
            [value]="section.title"
            (input) = $event.target.value
            (mouseleave)="saveChanges()">
   </h2>
-  <hr style="margin-top: 18px;" class='title-break' color=#979797>
-  <textarea #bodyText rows="5" title="Body" style="width: 100%;"
-            class="section-text edit-field" id="bodyText"
-            (click)="op.toggle($event);processText()"
-            (mouseleave)="saveChanges()">{{section.markdown}}</textarea>
+  <hr *ngIf="section.sequenceNum == 1 && section.parentSequence == 1" style="margin-top: 18px;" class='title-break' color=#979797>
+  <!--<textarea #bodyText rows="5" title="Body" style="width: 100%;"-->
+            <!--class="section-text edit-field" id="bodyText"-->
+            <!--(click)="op.toggle($event);processText()"-->
+            <!--(mouseleave)="saveChanges()">{{section.markdown}}</textarea>-->
+  <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true"
+                  [(ngModel)]="section.markdown"
+                  (mouseleave)="saveChanges()"
+                  #bodyText rows="5" title="Body" style="width: 100%;"
+                  class="section-text edit-field" id="bodyText"></app-ngx-editor>
 
   <div pDroppable="dragSection" (onDrop)="addSection()"
        (dragenter) ="showNestText = true;" (dragleave) ="showNestText = false;" (mouseleave)="showNestText = false;">
@@ -34,7 +39,4 @@
   </div>
 
   <simple-notifications [options]="options"></simple-notifications>
-  <p-overlayPanel #op>
-    <h3>Future Text Editor Toolbar :)</h3>
-  </p-overlayPanel>
 </div>

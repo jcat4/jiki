@@ -66,7 +66,7 @@ export class EditableSectionComponent implements OnInit {
 
     processText(){
       console.log('Text selected: ' + window.getSelection().toString());
-     // console.log('Start: ' + document.getElementById('bodyText').selectionStart);
+      //console.log('Start: ' + document.getElementById('bodyText').selectionStart);
       //console.log('End: ' + document.getElementById('bodyText').selectionEnd);
     }
 
@@ -91,10 +91,10 @@ export class EditableSectionComponent implements OnInit {
     }
 
     saveChanges(){
-        if(this.section.markdown != this.bodyText.nativeElement.value ||
+        if(this.section.markdown != this.bodyText.textArea.nativeElement.innerHTML ||
             (this.section.title != this.titleText.nativeElement.value)) {
           this.section.title = this.titleText.nativeElement.value;
-          this.section.markdown = this.bodyText.nativeElement.value;
+          this.section.markdown = this.bodyText.textArea.nativeElement.innerHTML;
           this.saveSection(this.section);
           console.log('Saving on mouseleave');
         }
