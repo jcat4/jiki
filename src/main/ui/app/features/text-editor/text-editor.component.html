@@ -1,0 +1,46 @@
+
+<table>
+  <tbody>
+  <tr>
+    <td>
+      <select #fontType class="selectClass" title="Font Style">
+        <option [value]="a">Agency FB</option>
+        <option [value]="b">Algerian</option>
+        <option [value]="c">Arial</option>
+        <option [value]="c">Arial Black</option>
+        <option [value]="c">Arial Narrow</option>
+        <option [value]="c">Arial Rounded MT Bold</option>
+        <option [value]="c">Arial Unicode MS</option>
+        <option [value]="c">Baskerville Old Face</option>
+        <option [value]="c">Bauhaus 93</option>
+        <option [value]="c">Bell MT</option>
+        <option [value]="c">Berlin Sans FB</option>
+        <option [value]="c">Berlin Sans FB Demi</option>
+      </select>
+    </td>
+    <td>
+      <select #fontType class="selectClass" title="Font Style">
+        <option *ngFor="let dummy of ' '.repeat(72).split(''), let x = index" [value]="x + 1">{{x + 1}}</option>
+      </select><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4 style="font-size: large;font-weight: bold;">
+        <i class="fa fa-bold" title="Bold"></i>&nbsp;
+        <i class="fa fa-italic" title="Italic"></i>&nbsp;
+        <i class="fa fa-underline" style="font-size: 19px;" title="Underline"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <p-colorPicker [(ngModel)]="color2" title="Highlight"></p-colorPicker>&nbsp;
+        <i class="fa fa-font" style="border-bottom: medium solid red" title="Change font color"></i>&nbsp;
+        <i class="fa fa-strikethrough" title="Strike-through"></i>&nbsp;
+      </h4>
+    </td>
+    <td>
+      <h4 style="font-size: large;font-weight: bold;">
+        <i class="fa fa-list-ol" title="Ordered List"></i>&nbsp;
+        <i class="fa fa-list-ul" title="Unordered List"></i>&nbsp;
+      </h4>
+    </td>
+  </tr>
+  </tbody>
+</table>
