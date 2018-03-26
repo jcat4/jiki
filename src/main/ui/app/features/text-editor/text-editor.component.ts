@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TextEditorComponent implements OnInit {
 
   color2: string = '#fff431;';
+  a; b; c;
 
   constructor() { }
 
